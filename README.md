@@ -20,10 +20,10 @@ for (i = 0; i < heads.length; i++){
 ## Example result (from CNN.com):
 ```
 White House preparing draft national emergency order
-VM29150:3 Trump administration has identified $7B in funds to build a border wall
-VM29150:3 ANALYSIS No one knows how Trump plans to end the shutdown
-VM29150:3 ANALYSIS A big lesson for Trump in Senate shutdown votes
-VM29150:3 Pelosi schools Trump in the art of power
-VM29150:3 Senator slams Ted Cruz's 'crocodile tears
+Trump administration has identified $7B in funds to build a border wall
+ANALYSIS No one knows how Trump plans to end the shutdown
+ANALYSIS A big lesson for Trump in Senate shutdown votes
+Pelosi schools Trump in the art of power
+Senator slams Ted Cruz's 'crocodile tears
 ...
 ```
