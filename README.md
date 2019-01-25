@@ -10,7 +10,6 @@ Grab all the headings on a website without installing any plugins
 * Copy the following script (between the ``` script content ``` tags):
 ```
 var getHeadings = function(){
-	snippet = "START__\n";
     data = document.querySelectorAll("h1,h2,h3,h4");
     for(i=0;i<data.length;i++){
 		var da = "${data[i].innerText}";
