@@ -12,8 +12,7 @@ Grab all the headings on a website without installing any plugins
 var getHeadings = function(){
     data = document.querySelectorAll("h1,h2,h3,h4");
     for(i=0;i<data.length;i++){
-		var da = "${data[i].innerText}";
-        console.log(da);
+        console.log(data[i].innerText);
 }
 	
 };
