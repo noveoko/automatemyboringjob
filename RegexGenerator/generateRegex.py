@@ -50,7 +50,7 @@ def generateRegExFromString(string)->Tuple[str, str]:
             new_pattern = generateRegExPattern(unique_patterns=100)
             for pattern in new_pattern:
                 pattern = pattern[1]
-                if re.match(pattern, string):
+                if re.fullmatch(pattern, string):
                     good_pattern = pattern
                     break
         except Exception as ee:
@@ -58,7 +58,7 @@ def generateRegExFromString(string)->Tuple[str, str]:
     return (good_pattern, string)
 
 
-
-myregex = generateRegExFromString("9999")
+# Example:
+myregex = generateRegExFromString("March 1989")
 
 print(myregex)
