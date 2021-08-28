@@ -4,8 +4,9 @@
 
 Programs to automate YOUR boring job
 
-#Example 1 Web Scraping in a Hurry
-##Purpose
+# Example 1 Web Scraping in a Hurry
+
+## Purpose
 Grab all the headings on a website without installing any plugins
 
 - Press CTRL+Shift+i
