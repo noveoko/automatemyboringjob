@@ -1,0 +1,273 @@
+[
+    {
+        "label": "generateRegex",
+        "importPath": "RegexGenerator.generateRegex",
+        "description": "RegexGenerator.generateRegex",
+        "isExtraImport": true,
+        "detail": "RegexGenerator.generateRegex",
+        "documentation": {}
+    },
+    {
+        "label": "generateRegex",
+        "importPath": "RegexGenerator.generateRegex",
+        "description": "RegexGenerator.generateRegex",
+        "isExtraImport": true,
+        "detail": "RegexGenerator.generateRegex",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Set",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Tuple",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "argparse",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "argparse",
+        "description": "argparse",
+        "detail": "argparse",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timezone",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "glob",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "glob",
+        "description": "glob",
+        "detail": "glob",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "datetime,pytz",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "datetime.pytz",
+        "description": "datetime.pytz",
+        "detail": "datetime.pytz",
+        "documentation": {}
+    },
+    {
+        "label": "test_generate_regex_pattern",
+        "kind": 2,
+        "importPath": "RegexGenerator.tests.test_all_features",
+        "description": "RegexGenerator.tests.test_all_features",
+        "peekOfCode": "def test_generate_regex_pattern():\n    g = generateRegex(\"abc\")\n    assert g.generate_regex_pattern() == [[3, \"4\\\\w\"]]\ndef test_generate_from_regex():\n    g = generateRegex(\"abc\")\n    assert g.generate_from_regex(\"\\d{2}\") == [{\"71*ze\"}, \"\\\\d{2}\", 0]\ndef test_generate_regex_from_string():\n    g = generateRegex(\"abc\")\n    g.generate_regex_pattern()\n    g.found_patterns = []",
+        "detail": "RegexGenerator.tests.test_all_features",
+        "documentation": {}
+    },
+    {
+        "label": "test_generate_from_regex",
+        "kind": 2,
+        "importPath": "RegexGenerator.tests.test_all_features",
+        "description": "RegexGenerator.tests.test_all_features",
+        "peekOfCode": "def test_generate_from_regex():\n    g = generateRegex(\"abc\")\n    assert g.generate_from_regex(\"\\d{2}\") == [{\"71*ze\"}, \"\\\\d{2}\", 0]\ndef test_generate_regex_from_string():\n    g = generateRegex(\"abc\")\n    g.generate_regex_pattern()\n    g.found_patterns = []",
+        "detail": "RegexGenerator.tests.test_all_features",
+        "documentation": {}
+    },
+    {
+        "label": "test_generate_regex_from_string",
+        "kind": 2,
+        "importPath": "RegexGenerator.tests.test_all_features",
+        "description": "RegexGenerator.tests.test_all_features",
+        "peekOfCode": "def test_generate_regex_from_string():\n    g = generateRegex(\"abc\")\n    g.generate_regex_pattern()\n    g.found_patterns = []",
+        "detail": "RegexGenerator.tests.test_all_features",
+        "documentation": {}
+    },
+    {
+        "label": "all_symbols",
+        "kind": 5,
+        "importPath": "RegexGenerator.utilities.create_symbol_frequency",
+        "description": "RegexGenerator.utilities.create_symbol_frequency",
+        "peekOfCode": "all_symbols = {\n        \".\":0,\n        \"^\":0,\n        \"$\":0,\n        \"*\":0,\n        \"+\":0,\n        \"?\":0,\n        \"{\":0,\n        \"}\":0,\n        \"[\":0,",
+        "detail": "RegexGenerator.utilities.create_symbol_frequency",
+        "documentation": {}
+    },
+    {
+        "label": "patterns",
+        "kind": 5,
+        "importPath": "RegexGenerator.utilities.extract_patterns",
+        "description": "RegexGenerator.utilities.extract_patterns",
+        "peekOfCode": "patterns = set()\nwith open(\"scratchpad.txt\", \"r\", encoding=\"utf-8\") as infile:\n    for line in infile.readlines():\n        if \"re.compile\" in line:\n            line = line.split(\"re.compile\")[-1]\n            patterns.add(line)\nwith open(\"scratchpad.txt\", \"w\", encoding=\"utf-8\") as outfile:\n    for pattern in patterns:\n        outfile.write(pattern + \"\\n\")",
+        "detail": "RegexGenerator.utilities.extract_patterns",
+        "documentation": {}
+    },
+    {
+        "label": "generateRegex",
+        "kind": 6,
+        "importPath": "RegexGenerator.generateRegex",
+        "description": "RegexGenerator.generateRegex",
+        "peekOfCode": "class generateRegex:\n    all_symbols = [\n        \".\",\n        \"^\",\n        \"$\",\n        \"*\",\n        \"+\",\n        \"?\",\n        \"{\",\n        \"}\",",
+        "detail": "RegexGenerator.generateRegex",
+        "documentation": {}
+    },
+    {
+        "label": "getTime",
+        "kind": 2,
+        "importPath": "Facebook_Messages_Report",
+        "description": "Facebook_Messages_Report",
+        "peekOfCode": "def getTime(milliseconds, timezone=\"US/Central\"):\n    dtobj2 = datetime.datetime.fromtimestamp(milliseconds/1000.0)\n    mytimezone=pytz.timezone(\"Europe/Warsaw\") #my current timezone\n    dtobj4=mytimezone.localize(dtobj2)        #localize function\n    new_timezone=dtobj4.astimezone(pytz.timezone(timezone)) #astimezone method\n    return [timezone, new_timezone.date(), new_timezone.time()]\ndef participants(list_of_people):\n    if len(list_of_people) > 4:\n        return f\"{list_of_people[0:4]}_...\"\n    else:",
+        "detail": "Facebook_Messages_Report",
+        "documentation": {}
+    },
+    {
+        "label": "participants",
+        "kind": 2,
+        "importPath": "Facebook_Messages_Report",
+        "description": "Facebook_Messages_Report",
+        "peekOfCode": "def participants(list_of_people):\n    if len(list_of_people) > 4:\n        return f\"{list_of_people[0:4]}_...\"\n    else:\n        return list_of_people\ndef createMessageReport():\n    times = []\n    for file in files:\n        with open(file,'r',encoding='utf-8') as outfile:\n            j = json.load(outfile)",
+        "detail": "Facebook_Messages_Report",
+        "documentation": {}
+    },
+    {
+        "label": "createMessageReport",
+        "kind": 2,
+        "importPath": "Facebook_Messages_Report",
+        "description": "Facebook_Messages_Report",
+        "peekOfCode": "def createMessageReport():\n    times = []\n    for file in files:\n        with open(file,'r',encoding='utf-8') as outfile:\n            j = json.load(outfile)\n            for message in j[\"messages\"]:\n                ms = int(message[\"timestamp_ms\"])\n                date = datetime.datetime.fromtimestamp(ms/1000.0)\n                sender = message[\"sender_name\"]\n                others = list(set([a[\"name\"] for a in j[\"participants\"]]))",
+        "detail": "Facebook_Messages_Report",
+        "documentation": {}
+    },
+    {
+        "label": "files",
+        "kind": 5,
+        "importPath": "Facebook_Messages_Report",
+        "description": "Facebook_Messages_Report",
+        "peekOfCode": "files = glob.glob(\"**/*.json\")\nprint(files)\nimport datetime,pytz\ndef getTime(milliseconds, timezone=\"US/Central\"):\n    dtobj2 = datetime.datetime.fromtimestamp(milliseconds/1000.0)\n    mytimezone=pytz.timezone(\"Europe/Warsaw\") #my current timezone\n    dtobj4=mytimezone.localize(dtobj2)        #localize function\n    new_timezone=dtobj4.astimezone(pytz.timezone(timezone)) #astimezone method\n    return [timezone, new_timezone.date(), new_timezone.time()]\ndef participants(list_of_people):",
+        "detail": "Facebook_Messages_Report",
+        "documentation": {}
+    },
+    {
+        "label": "extensions",
+        "kind": 5,
+        "importPath": "media",
+        "description": "media",
+        "peekOfCode": "extensions = ['psd','pdf','ai','indd','blend','tif','tiff','bmp','jpg','jpeg','gif','png','eps','raw','cr2','nef','orf','sr2','webm','mpg','mp2','mpeg','mpe','mpv','ogg','mp4','m4p','m4v','avi','wmv','mov','qt','flv','swf','avchd']\ncompressions = ['7z','s7z','ace','afa','alz','apk','arc','ark','arc','cdx','arj','b1','b6z','ba','bh','cab','car','cfs','cpt','dar','dd','dgc','dmg','ear','gca','ha','hki','ice','jar','kgb','lzh','lha','lzx','pak','partimg','paq6','paq7','paq8','pea','pim','pit','qda','rar','rk','sda','sea','sen','sfx','shk','sit','sitx','sqx','gz','tgz','bz2','tbz2','lz','tlz','xz','txz','uc','uc0','uc2','ucn','ur2','ue2','uca','uha','war','wim','xar','xp3','yz1','zip','zipx','zoo','zpaq','zz']\nexts = {a:set() for a in extensions}\ncomps = {a:set() for a in compressions}\nwith open('everyFile.txt','r',encoding='utf-8') as infile:\n    for line in infile.readlines():\n        ext = line.split(\".\")[-1].strip()\n        if ext in extensions:\n            exts[ext].add(line)\n        if ext in compressions:",
+        "detail": "media",
+        "documentation": {}
+    },
+    {
+        "label": "compressions",
+        "kind": 5,
+        "importPath": "media",
+        "description": "media",
+        "peekOfCode": "compressions = ['7z','s7z','ace','afa','alz','apk','arc','ark','arc','cdx','arj','b1','b6z','ba','bh','cab','car','cfs','cpt','dar','dd','dgc','dmg','ear','gca','ha','hki','ice','jar','kgb','lzh','lha','lzx','pak','partimg','paq6','paq7','paq8','pea','pim','pit','qda','rar','rk','sda','sea','sen','sfx','shk','sit','sitx','sqx','gz','tgz','bz2','tbz2','lz','tlz','xz','txz','uc','uc0','uc2','ucn','ur2','ue2','uca','uha','war','wim','xar','xp3','yz1','zip','zipx','zoo','zpaq','zz']\nexts = {a:set() for a in extensions}\ncomps = {a:set() for a in compressions}\nwith open('everyFile.txt','r',encoding='utf-8') as infile:\n    for line in infile.readlines():\n        ext = line.split(\".\")[-1].strip()\n        if ext in extensions:\n            exts[ext].add(line)\n        if ext in compressions:\n            comps[ext].add(line)",
+        "detail": "media",
+        "documentation": {}
+    },
+    {
+        "label": "exts",
+        "kind": 5,
+        "importPath": "media",
+        "description": "media",
+        "peekOfCode": "exts = {a:set() for a in extensions}\ncomps = {a:set() for a in compressions}\nwith open('everyFile.txt','r',encoding='utf-8') as infile:\n    for line in infile.readlines():\n        ext = line.split(\".\")[-1].strip()\n        if ext in extensions:\n            exts[ext].add(line)\n        if ext in compressions:\n            comps[ext].add(line)\nprint(\"FILES\")",
+        "detail": "media",
+        "documentation": {}
+    },
+    {
+        "label": "comps",
+        "kind": 5,
+        "importPath": "media",
+        "description": "media",
+        "peekOfCode": "comps = {a:set() for a in compressions}\nwith open('everyFile.txt','r',encoding='utf-8') as infile:\n    for line in infile.readlines():\n        ext = line.split(\".\")[-1].strip()\n        if ext in extensions:\n            exts[ext].add(line)\n        if ext in compressions:\n            comps[ext].add(line)\nprint(\"FILES\")\nfor fileType, links in exts.items():",
+        "detail": "media",
+        "documentation": {}
+    },
+    {
+        "label": "dimensions",
+        "kind": 5,
+        "importPath": "media",
+        "description": "media",
+        "peekOfCode": "dimensions = {\"small\":set(),\"medium\":set(),\"large\":set(),\"huge\":set()}\nfor fileType, links in comps.items():\n    if len(links) > 0:\n        for link in links:\n            link = link.strip()\n            try:\n                stats = os.stat(link)\n                size = stats.st_size / (1024*1024)\n                if 0 < size < 10:\n                    dimensions[\"small\"].add(link)",
+        "detail": "media",
+        "documentation": {}
+    }
+]

@@ -5,41 +5,117 @@ import sys
 import argparse
 
 
-class RegexGenerator:
+class generateRegex:
 
-    removed = ["."]
-    metacharacters = ["^", "$", "*", "+", "?", "{", "}", "[", "]", "\\", "|" "(", ")"]
-    patterns = ["\d", "\D", "\s", "\S", "\w", "\W"]
-    characters = "abcdefghijklmnopqrstuvwxyz ,'!@#$%^&*()_+}{"
-    numbers = "0123456789"
-    all_symbols = characters + numbers
-    prob = [0.1, 0.2, 0.35, 0.35]
+    all_symbols = [
+        ".",
+        "^",
+        "$",
+        "*",
+        "+",
+        "?",
+        "{",
+        "}",
+        "[",
+        "]",
+        "\\",
+        "|" "(",
+        ")",
+        "\d",
+        "\D",
+        "\s",
+        "\S",
+        "\w",
+        "\W",
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w",
+        "x",
+        "y",
+        "z",
+        " ",
+        ",",
+        "'",
+        "!",
+        "@",
+        "#",
+        "$",
+        "%",
+        "^",
+        "&",
+        "*",
+        "(",
+        ")",
+        "_",
+        "+",
+        "}",
+        "{",
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+    ]
+    seed = 0.2323
 
-    def __init__(self, string, negative_string=None):
-        self.string: str = string
-        self.negative_string: str = negative_string
+    def __init__(self):
         self.max_patterns = 5
         self.max_tries = 1000
         self.found_patterns = set()
         self.pattern_size: int = 3
         self.unique_patterns: int = 1
 
-    def generateRegExPattern(self) -> List[str]:
+    def generate_regex_pattern(self) -> List[str]:
         all_patterns: List = []
         while len(all_patterns) < self.unique_patterns:
-            pattern = r""
-            while len(pattern) < self.pattern_size:
-                choice = random.choices(
-                    [self.metacharacters, self.patterns, self.characters, self.numbers],
-                    self.prob,
-                    k=1,
-                )
-                random_symbol = random.choice(choice[0])
-                pattern += random_symbol
-            all_patterns.append([self.pattern_size, pattern])
+            random.seed(self.seed)
+            pattern_type = random.choices(["logic", "random"], [0.05, 0.95])[0]
+            if pattern_type == "logic":
+                all_patterns.append(self.repeatMaker())
+            else:
+                pattern = r""
+                while len(pattern) < self.pattern_size:
+                    choice = random.choices(
+                        [
+                            self.metacharacters,
+                            self.patterns,
+                            self.characters,
+                            self.numbers,
+                        ],
+                        self.prob,
+                        k=1,
+                    )
+                    random_symbol = random.choice(choice[0])
+                    pattern += random_symbol
+                all_patterns.append([self.pattern_size, pattern])
         return all_patterns
 
-    def generateFromRegex(
+    def generate_from_regex(
         self, pattern: str, max_symbols: int = 10, max_tries: int = 100000
     ) -> List:
         matching_string: Set[str] = set()
@@ -70,11 +146,15 @@ class RegexGenerator:
             reverse=True,
         )
 
-    def generateRegExFromString(self) -> Tuple[str, str]:
+    def repeatMaker(max_repeats=5):
+        repeats = random.choice(range(max_repeats))
+        return f"{repeats}"
+
+    def generate_regex_from_string(self) -> Tuple[str, str]:
         tries = 0
         while len(self.found_patterns) < self.max_patterns and tries < self.max_tries:
             try:
-                new_pattern = self.generateRegExPattern(unique_patterns=1000)
+                new_pattern = self.generate_regex_pattern(unique_patterns=1000)
                 for pattern in new_pattern:
                     pattern = pattern[1]
                     if re.fullmatch(pattern, self.string):
@@ -87,9 +167,8 @@ class RegexGenerator:
                 continue
             finally:
                 tries += 1
-        else:
-            if self.negative_string:
-                self.found_patterns = self.best_pattern()
+        if self.negative_string:
+            self.found_patterns = self.best_pattern()
 
 
 if __name__ == "__main__":
@@ -105,6 +184,4 @@ if __name__ == "__main__":
         help="<string> that should not match generated regex pattern",
     )
     args = parser.parse_args()
-    generate = RegexGenerator(args.string, args.negative)
-    generate.generateRegExFromString()
-    print(generate.found_patterns)
+    generate = generateRegex(args.string, args.negative)
