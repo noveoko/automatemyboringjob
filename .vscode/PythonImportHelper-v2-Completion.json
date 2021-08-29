@@ -16,21 +16,21 @@
         "documentation": {}
     },
     {
-        "label": "random",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "random",
-        "description": "random",
-        "detail": "random",
-        "documentation": {}
-    },
-    {
         "label": "re",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "re",
         "description": "re",
         "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
         "documentation": {}
     },
     {
@@ -73,6 +73,14 @@
         "importPath": "argparse",
         "description": "argparse",
         "detail": "argparse",
+        "documentation": {}
+    },
+    {
+        "label": "UpdateFrequencies",
+        "importPath": "RegexGenerator.utilities",
+        "description": "RegexGenerator.utilities",
+        "isExtraImport": true,
+        "detail": "RegexGenerator.utilities",
         "documentation": {}
     },
     {
@@ -163,11 +171,11 @@
         "documentation": {}
     },
     {
-        "label": "all_symbols",
-        "kind": 5,
+        "label": "UpdateFrequencies",
+        "kind": 6,
         "importPath": "RegexGenerator.utilities.create_symbol_frequency",
         "description": "RegexGenerator.utilities.create_symbol_frequency",
-        "peekOfCode": "all_symbols = {\n        \".\":0,\n        \"^\":0,\n        \"$\":0,\n        \"*\":0,\n        \"+\":0,\n        \"?\":0,\n        \"{\":0,\n        \"}\":0,\n        \"[\":0,",
+        "peekOfCode": "class UpdateFrequencies:\n    all_symbols = {\n        \".\": 0,\n        \"^\": 0,\n        \"$\": 0,\n        \"*\": 0,\n        \"+\": 0,\n        \"?\": 0,\n        \"{\": 0,\n        \"}\": 0,",
         "detail": "RegexGenerator.utilities.create_symbol_frequency",
         "documentation": {}
     },
@@ -185,7 +193,7 @@
         "kind": 6,
         "importPath": "RegexGenerator.generateRegex",
         "description": "RegexGenerator.generateRegex",
-        "peekOfCode": "class generateRegex:\n    all_symbols = [\n        \".\",\n        \"^\",\n        \"$\",\n        \"*\",\n        \"+\",\n        \"?\",\n        \"{\",\n        \"}\",",
+        "peekOfCode": "class generateRegex:\n    util = UpdateFrequencies()\n    symbol_map = util.create_probability_object()\n    seed = 0.2323\n    def __init__(self):\n        self.max_patterns = 5\n        self.max_tries = 1000\n        self.found_patterns = set()\n        self.pattern_size: int = 3\n        self.unique_patterns: int = 1",
         "detail": "RegexGenerator.generateRegex",
         "documentation": {}
     },

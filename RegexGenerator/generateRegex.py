@@ -4,83 +4,14 @@ from typing import List, Set, Tuple
 import sys
 import argparse
 
+from RegexGenerator.utilities import UpdateFrequencies
+
 
 class generateRegex:
 
-    all_symbols = [
-        ".",
-        "^",
-        "$",
-        "*",
-        "+",
-        "?",
-        "{",
-        "}",
-        "[",
-        "]",
-        "\\",
-        "|" "(",
-        ")",
-        "\d",
-        "\D",
-        "\s",
-        "\S",
-        "\w",
-        "\W",
-        "a",
-        "b",
-        "c",
-        "d",
-        "e",
-        "f",
-        "g",
-        "h",
-        "i",
-        "j",
-        "k",
-        "l",
-        "m",
-        "n",
-        "o",
-        "p",
-        "q",
-        "r",
-        "s",
-        "t",
-        "u",
-        "v",
-        "w",
-        "x",
-        "y",
-        "z",
-        " ",
-        ",",
-        "'",
-        "!",
-        "@",
-        "#",
-        "$",
-        "%",
-        "^",
-        "&",
-        "*",
-        "(",
-        ")",
-        "_",
-        "+",
-        "}",
-        "{",
-        "0",
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7",
-        "8",
-        "9",
-    ]
+    util = UpdateFrequencies()
+    symbol_map = util.create_probability_object()
+
     seed = 0.2323
 
     def __init__(self):
@@ -94,25 +25,16 @@ class generateRegex:
         all_patterns: List = []
         while len(all_patterns) < self.unique_patterns:
             random.seed(self.seed)
-            pattern_type = random.choices(["logic", "random"], [0.05, 0.95])[0]
-            if pattern_type == "logic":
-                all_patterns.append(self.repeatMaker())
-            else:
-                pattern = r""
-                while len(pattern) < self.pattern_size:
-                    choice = random.choices(
-                        [
-                            self.metacharacters,
-                            self.patterns,
-                            self.characters,
-                            self.numbers,
-                        ],
-                        self.prob,
-                        k=1,
-                    )
-                    random_symbol = random.choice(choice[0])
-                    pattern += random_symbol
-                all_patterns.append([self.pattern_size, pattern])
+            pattern = r""
+            while len(pattern) < self.pattern_size:
+                choice = random.choices(
+                    self.prob_dict.keys(),
+                    self.prob_dict.values(),
+                    k=1,
+                )
+                random_symbol = random.choice(choice[0])
+                pattern += random_symbol
+            all_patterns.append([self.pattern_size, pattern])
         return all_patterns
 
     def generate_from_regex(
@@ -125,7 +47,7 @@ class generateRegex:
             symbols_count = random.choice(range(1, max_symbols))
             string = ""
             while len(string) < symbols_count:
-                string_choice = random.choice(self.all_symbols)
+                string_choice = random.choice(self.prob_dict.keys())
                 string += string_choice
             if re.match(pattern, string):
                 matching_string.add(string)
