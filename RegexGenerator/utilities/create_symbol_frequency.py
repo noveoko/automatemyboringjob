@@ -86,7 +86,9 @@ class UpdateFrequencies:
     def update_frequencies(self):
 
         errors = set()
-        with open("patterns_in_the_wild.txt", "r", encoding="utf-8") as infile:
+        with open(
+            r"utilities/patterns_in_the_wild.txt", "r", encoding="utf-8"
+        ) as infile:
             for line in infile.readlines():
                 line_x = line
                 for symbol in self.all_symbols.keys():
@@ -107,7 +109,6 @@ class UpdateFrequencies:
         prob_dict = {}
         for symbol in self.all_symbols.keys():
             prob_dict[symbol] = self.all_symbols[symbol] / self.total_symbols
-        print(prob_dict)
         self.prob_dict = prob_dict
 
 

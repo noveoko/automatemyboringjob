@@ -77,10 +77,10 @@
     },
     {
         "label": "UpdateFrequencies",
-        "importPath": "RegexGenerator.utilities",
-        "description": "RegexGenerator.utilities",
+        "importPath": "utilities.create_symbol_frequency",
+        "description": "utilities.create_symbol_frequency",
         "isExtraImport": true,
-        "detail": "RegexGenerator.utilities",
+        "detail": "utilities.create_symbol_frequency",
         "documentation": {}
     },
     {
@@ -193,7 +193,7 @@
         "kind": 6,
         "importPath": "RegexGenerator.generateRegex",
         "description": "RegexGenerator.generateRegex",
-        "peekOfCode": "class generateRegex:\n    util = UpdateFrequencies()\n    symbol_map = util.create_probability_object()\n    seed = 0.2323\n    def __init__(self):\n        self.max_patterns = 5\n        self.max_tries = 1000\n        self.found_patterns = set()\n        self.pattern_size: int = 3\n        self.unique_patterns: int = 1",
+        "peekOfCode": "class generateRegex:\n    util = uf()\n    symbol_map = util.create_probability_object()\n    seed = 0.2323\n    def __init__(self):\n        self.max_patterns = 5\n        self.max_tries = 1000\n        self.found_patterns = set()\n        self.pattern_size: int = 3\n        self.unique_patterns: int = 1",
         "detail": "RegexGenerator.generateRegex",
         "documentation": {}
     },

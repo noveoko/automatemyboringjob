@@ -4,12 +4,12 @@ from typing import List, Set, Tuple
 import sys
 import argparse
 
-from RegexGenerator.utilities import UpdateFrequencies
+from utilities.create_symbol_frequency import UpdateFrequencies as uf
 
 
 class generateRegex:
 
-    util = UpdateFrequencies()
+    util = uf()
     symbol_map = util.create_probability_object()
 
     seed = 0.2323
