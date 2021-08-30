@@ -1,20 +1,36 @@
 from RegexGenerator.generateRegex import generateRegex
-
-# import generateRegex class from RegexGenerator.generateRegex
 from RegexGenerator.generateRegex import generateRegex
 
 
 def test_generate_regex_pattern():
-    g = generateRegex("abc")
-    assert g.generate_regex_pattern() == [[3, "4\\w"]]
+    g = generateRegex("abc", "100")
+    assert g.string == "abc"
 
 
-def test_generate_from_regex():
-    g = generateRegex("abc")
-    assert g.generate_from_regex("\d{2}") == [{"71*ze"}, "\\d{2}", 0]
+def test_generate_regex_pattern():
+    g = generateRegex("abc", "100")
+    assert g.negative_string == "100"
 
 
-def test_generate_regex_from_string():
-    g = generateRegex("abc")
-    g.generate_regex_pattern()
+def test_generate_regex_pattern():
+    g = generateRegex("abc", "100")
+    assert g.symbol_map["#"] == 0.015819750719079578
+
+
+def test_generate_regex_pattern():
+    g = generateRegex("abc", "100")
+    assert g.generate_regex_pattern() == [[3, "\\[q"]]
+
+
+def test_generate_regex_pattern():
+    g = generateRegex("abc", "100")
+    g.generate_regex_from_string()
     g.found_patterns = []
+
+
+# self.max_patterns = 5
+# self.max_tries = 1000
+# self.found_patterns = set()
+# self.pattern_size: int = 3
+# self.unique_patterns: int = 1
+# self.symbol_map = uf.create_probability_object(uf)

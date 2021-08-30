@@ -77,10 +77,10 @@
     },
     {
         "label": "UpdateFrequencies",
-        "importPath": "utilities.create_symbol_frequency",
-        "description": "utilities.create_symbol_frequency",
+        "importPath": "RegexGenerator.utilities.create_symbol_frequency",
+        "description": "RegexGenerator.utilities.create_symbol_frequency",
         "isExtraImport": true,
-        "detail": "utilities.create_symbol_frequency",
+        "detail": "RegexGenerator.utilities.create_symbol_frequency",
         "documentation": {}
     },
     {
@@ -148,25 +148,43 @@
         "kind": 2,
         "importPath": "RegexGenerator.tests.test_all_features",
         "description": "RegexGenerator.tests.test_all_features",
-        "peekOfCode": "def test_generate_regex_pattern():\n    g = generateRegex(\"abc\")\n    assert g.generate_regex_pattern() == [[3, \"4\\\\w\"]]\ndef test_generate_from_regex():\n    g = generateRegex(\"abc\")\n    assert g.generate_from_regex(\"\\d{2}\") == [{\"71*ze\"}, \"\\\\d{2}\", 0]\ndef test_generate_regex_from_string():\n    g = generateRegex(\"abc\")\n    g.generate_regex_pattern()\n    g.found_patterns = []",
+        "peekOfCode": "def test_generate_regex_pattern():\n    g = generateRegex(\"abc\", \"100\")\n    assert g.string == \"abc\"\ndef test_generate_regex_pattern():\n    g = generateRegex(\"abc\", \"100\")\n    assert g.negative_string == \"100\"\ndef test_generate_regex_pattern():\n    g = generateRegex(\"abc\", \"100\")\n    assert g.symbol_map[\"#\"] == 0.015819750719079578\ndef test_generate_regex_pattern():",
         "detail": "RegexGenerator.tests.test_all_features",
         "documentation": {}
     },
     {
-        "label": "test_generate_from_regex",
+        "label": "test_generate_regex_pattern",
         "kind": 2,
         "importPath": "RegexGenerator.tests.test_all_features",
         "description": "RegexGenerator.tests.test_all_features",
-        "peekOfCode": "def test_generate_from_regex():\n    g = generateRegex(\"abc\")\n    assert g.generate_from_regex(\"\\d{2}\") == [{\"71*ze\"}, \"\\\\d{2}\", 0]\ndef test_generate_regex_from_string():\n    g = generateRegex(\"abc\")\n    g.generate_regex_pattern()\n    g.found_patterns = []",
+        "peekOfCode": "def test_generate_regex_pattern():\n    g = generateRegex(\"abc\", \"100\")\n    assert g.negative_string == \"100\"\ndef test_generate_regex_pattern():\n    g = generateRegex(\"abc\", \"100\")\n    assert g.symbol_map[\"#\"] == 0.015819750719079578\ndef test_generate_regex_pattern():\n    g = generateRegex(\"abc\", \"100\")\n    assert g.generate_regex_pattern() == [[3, \"\\\\[q\"]]\ndef test_generate_regex_pattern():",
         "detail": "RegexGenerator.tests.test_all_features",
         "documentation": {}
     },
     {
-        "label": "test_generate_regex_from_string",
+        "label": "test_generate_regex_pattern",
         "kind": 2,
         "importPath": "RegexGenerator.tests.test_all_features",
         "description": "RegexGenerator.tests.test_all_features",
-        "peekOfCode": "def test_generate_regex_from_string():\n    g = generateRegex(\"abc\")\n    g.generate_regex_pattern()\n    g.found_patterns = []",
+        "peekOfCode": "def test_generate_regex_pattern():\n    g = generateRegex(\"abc\", \"100\")\n    assert g.symbol_map[\"#\"] == 0.015819750719079578\ndef test_generate_regex_pattern():\n    g = generateRegex(\"abc\", \"100\")\n    assert g.generate_regex_pattern() == [[3, \"\\\\[q\"]]\ndef test_generate_regex_pattern():\n    g = generateRegex(\"abc\", \"100\")\n    g.generate_regex_from_string()\n    g.found_patterns = []",
+        "detail": "RegexGenerator.tests.test_all_features",
+        "documentation": {}
+    },
+    {
+        "label": "test_generate_regex_pattern",
+        "kind": 2,
+        "importPath": "RegexGenerator.tests.test_all_features",
+        "description": "RegexGenerator.tests.test_all_features",
+        "peekOfCode": "def test_generate_regex_pattern():\n    g = generateRegex(\"abc\", \"100\")\n    assert g.generate_regex_pattern() == [[3, \"\\\\[q\"]]\ndef test_generate_regex_pattern():\n    g = generateRegex(\"abc\", \"100\")\n    g.generate_regex_from_string()\n    g.found_patterns = []\n# self.max_patterns = 5\n# self.max_tries = 1000\n# self.found_patterns = set()",
+        "detail": "RegexGenerator.tests.test_all_features",
+        "documentation": {}
+    },
+    {
+        "label": "test_generate_regex_pattern",
+        "kind": 2,
+        "importPath": "RegexGenerator.tests.test_all_features",
+        "description": "RegexGenerator.tests.test_all_features",
+        "peekOfCode": "def test_generate_regex_pattern():\n    g = generateRegex(\"abc\", \"100\")\n    g.generate_regex_from_string()\n    g.found_patterns = []\n# self.max_patterns = 5\n# self.max_tries = 1000\n# self.found_patterns = set()\n# self.pattern_size: int = 3\n# self.unique_patterns: int = 1\n# self.symbol_map = uf.create_probability_object(uf)",
         "detail": "RegexGenerator.tests.test_all_features",
         "documentation": {}
     },
@@ -193,7 +211,7 @@
         "kind": 6,
         "importPath": "RegexGenerator.generateRegex",
         "description": "RegexGenerator.generateRegex",
-        "peekOfCode": "class generateRegex:\n    util = uf()\n    symbol_map = util.create_probability_object()\n    seed = 0.2323\n    def __init__(self):\n        self.max_patterns = 5\n        self.max_tries = 1000\n        self.found_patterns = set()\n        self.pattern_size: int = 3\n        self.unique_patterns: int = 1",
+        "peekOfCode": "class generateRegex:\n    \"\"\"Generate a regex give a string\"\"\"\n    seed = 0.2323\n    def __init__(self, string: str, negative_string: str):\n        self.string = string\n        self.negative_string = negative_string\n        self.max_patterns = 5\n        self.max_tries = 1000\n        self.found_patterns = set()\n        self.pattern_size: int = 3",
         "detail": "RegexGenerator.generateRegex",
         "documentation": {}
     },
@@ -238,7 +256,7 @@
         "kind": 5,
         "importPath": "media",
         "description": "media",
-        "peekOfCode": "extensions = ['psd','pdf','ai','indd','blend','tif','tiff','bmp','jpg','jpeg','gif','png','eps','raw','cr2','nef','orf','sr2','webm','mpg','mp2','mpeg','mpe','mpv','ogg','mp4','m4p','m4v','avi','wmv','mov','qt','flv','swf','avchd']\ncompressions = ['7z','s7z','ace','afa','alz','apk','arc','ark','arc','cdx','arj','b1','b6z','ba','bh','cab','car','cfs','cpt','dar','dd','dgc','dmg','ear','gca','ha','hki','ice','jar','kgb','lzh','lha','lzx','pak','partimg','paq6','paq7','paq8','pea','pim','pit','qda','rar','rk','sda','sea','sen','sfx','shk','sit','sitx','sqx','gz','tgz','bz2','tbz2','lz','tlz','xz','txz','uc','uc0','uc2','ucn','ur2','ue2','uca','uha','war','wim','xar','xp3','yz1','zip','zipx','zoo','zpaq','zz']\nexts = {a:set() for a in extensions}\ncomps = {a:set() for a in compressions}\nwith open('everyFile.txt','r',encoding='utf-8') as infile:\n    for line in infile.readlines():\n        ext = line.split(\".\")[-1].strip()\n        if ext in extensions:\n            exts[ext].add(line)\n        if ext in compressions:",
+        "peekOfCode": "extensions = [\n    \"psd\",\n    \"pdf\",\n    \"ai\",\n    \"indd\",\n    \"blend\",\n    \"tif\",\n    \"tiff\",\n    \"bmp\",\n    \"jpg\",",
         "detail": "media",
         "documentation": {}
     },
@@ -247,16 +265,7 @@
         "kind": 5,
         "importPath": "media",
         "description": "media",
-        "peekOfCode": "compressions = ['7z','s7z','ace','afa','alz','apk','arc','ark','arc','cdx','arj','b1','b6z','ba','bh','cab','car','cfs','cpt','dar','dd','dgc','dmg','ear','gca','ha','hki','ice','jar','kgb','lzh','lha','lzx','pak','partimg','paq6','paq7','paq8','pea','pim','pit','qda','rar','rk','sda','sea','sen','sfx','shk','sit','sitx','sqx','gz','tgz','bz2','tbz2','lz','tlz','xz','txz','uc','uc0','uc2','ucn','ur2','ue2','uca','uha','war','wim','xar','xp3','yz1','zip','zipx','zoo','zpaq','zz']\nexts = {a:set() for a in extensions}\ncomps = {a:set() for a in compressions}\nwith open('everyFile.txt','r',encoding='utf-8') as infile:\n    for line in infile.readlines():\n        ext = line.split(\".\")[-1].strip()\n        if ext in extensions:\n            exts[ext].add(line)\n        if ext in compressions:\n            comps[ext].add(line)",
-        "detail": "media",
-        "documentation": {}
-    },
-    {
-        "label": "exts",
-        "kind": 5,
-        "importPath": "media",
-        "description": "media",
-        "peekOfCode": "exts = {a:set() for a in extensions}\ncomps = {a:set() for a in compressions}\nwith open('everyFile.txt','r',encoding='utf-8') as infile:\n    for line in infile.readlines():\n        ext = line.split(\".\")[-1].strip()\n        if ext in extensions:\n            exts[ext].add(line)\n        if ext in compressions:\n            comps[ext].add(line)\nprint(\"FILES\")",
+        "peekOfCode": "compressions = [\n    \"7z\",\n    \"s7z\",\n    \"ace\",\n    \"afa\",\n    \"alz\",\n    \"apk\",\n    \"arc\",\n    \"ark\",\n    \"arc\",",
         "detail": "media",
         "documentation": {}
     },
@@ -265,7 +274,7 @@
         "kind": 5,
         "importPath": "media",
         "description": "media",
-        "peekOfCode": "comps = {a:set() for a in compressions}\nwith open('everyFile.txt','r',encoding='utf-8') as infile:\n    for line in infile.readlines():\n        ext = line.split(\".\")[-1].strip()\n        if ext in extensions:\n            exts[ext].add(line)\n        if ext in compressions:\n            comps[ext].add(line)\nprint(\"FILES\")\nfor fileType, links in exts.items():",
+        "peekOfCode": "comps = {a: set() for a in compressions}\nwith open(\"everyFile.txt\", \"r\", encoding=\"utf-8\") as infile:\n    for line in infile.readlines():\n        ext = line.split(\".\")[-1].strip()\n        if ext in extensions:\n            exts[ext].add(line)\n        if ext in compressions:\n            comps[ext].add(line)\nprint(\"FILES\")\nfor fileType, links in exts.items():",
         "detail": "media",
         "documentation": {}
     },
@@ -274,7 +283,7 @@
         "kind": 5,
         "importPath": "media",
         "description": "media",
-        "peekOfCode": "dimensions = {\"small\":set(),\"medium\":set(),\"large\":set(),\"huge\":set()}\nfor fileType, links in comps.items():\n    if len(links) > 0:\n        for link in links:\n            link = link.strip()\n            try:\n                stats = os.stat(link)\n                size = stats.st_size / (1024*1024)\n                if 0 < size < 10:\n                    dimensions[\"small\"].add(link)",
+        "peekOfCode": "dimensions = {\"small\": set(), \"medium\": set(), \"large\": set(), \"huge\": set()}\nfor fileType, links in comps.items():\n    if len(links) > 0:\n        for link in links:\n            link = link.strip()\n            try:\n                stats = os.stat(link)\n                size = stats.st_size / (1024 * 1024)\n                if 0 < size < 10:\n                    dimensions[\"small\"].add(link)",
         "detail": "media",
         "documentation": {}
     }

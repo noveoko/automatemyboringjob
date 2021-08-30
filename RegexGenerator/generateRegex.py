@@ -4,32 +4,34 @@ from typing import List, Set, Tuple
 import sys
 import argparse
 
-from utilities.create_symbol_frequency import UpdateFrequencies as uf
+from RegexGenerator.utilities.create_symbol_frequency import UpdateFrequencies as uf
 
 
 class generateRegex:
 
-    util = uf()
-    symbol_map = util.create_probability_object()
+    """Generate a regex give a string"""
 
     seed = 0.2323
 
-    def __init__(self):
+    def __init__(self, string: str, negative_string: str):
+        self.string = string
+        self.negative_string = negative_string
         self.max_patterns = 5
         self.max_tries = 1000
         self.found_patterns = set()
         self.pattern_size: int = 3
         self.unique_patterns: int = 1
+        self.symbol_map = uf.create_probability_object(uf)
 
-    def generate_regex_pattern(self) -> List[str]:
-        all_patterns: List = []
+    def generate_regex_pattern(self):
+        all_patterns = []
         while len(all_patterns) < self.unique_patterns:
             random.seed(self.seed)
             pattern = r""
             while len(pattern) < self.pattern_size:
                 choice = random.choices(
-                    self.prob_dict.keys(),
-                    self.prob_dict.values(),
+                    [a for a in self.symbol_map.keys()],
+                    [a for a in self.symbol_map.values()],
                     k=1,
                 )
                 random_symbol = random.choice(choice[0])
@@ -47,8 +49,9 @@ class generateRegex:
             symbols_count = random.choice(range(1, max_symbols))
             string = ""
             while len(string) < symbols_count:
-                string_choice = random.choice(self.prob_dict.keys())
-                string += string_choice
+                if self.symbol_map:
+                    string_choice = random.choice([a for a in self.symbol_map.keys()])
+                    string += string_choice
             if re.match(pattern, string):
                 matching_string.add(string)
             else:
@@ -72,13 +75,15 @@ class generateRegex:
         repeats = random.choice(range(max_repeats))
         return f"{repeats}"
 
-    def generate_regex_from_string(self) -> Tuple[str, str]:
+    def generate_regex_from_string(self):
+        """Generate any regex pattern from a string"""
         tries = 0
-        while len(self.found_patterns) < self.max_patterns and tries < self.max_tries:
+        while tries < self.max_tries:
             try:
                 new_pattern = self.generate_regex_pattern(unique_patterns=1000)
                 for pattern in new_pattern:
                     pattern = pattern[1]
+                    print(pattern)
                     if re.fullmatch(pattern, self.string):
                         self.found_patterns.add(pattern)
                         print(
@@ -86,7 +91,7 @@ class generateRegex:
                             end="\r",
                         )
             except Exception as ee:
-                continue
+                print(ee)
             finally:
                 tries += 1
         if self.negative_string:
@@ -106,4 +111,8 @@ if __name__ == "__main__":
         help="<string> that should not match generated regex pattern",
     )
     args = parser.parse_args()
-    generate = generateRegex(args.string, args.negative)
+    generate = generateRegex(args.string)
+    if args.negative:
+        generate.generate_regex_from_string()
+    else:
+        generate.generate_regex_pattern()

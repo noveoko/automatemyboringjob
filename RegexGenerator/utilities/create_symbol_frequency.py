@@ -87,7 +87,7 @@ class UpdateFrequencies:
 
         errors = set()
         with open(
-            r"utilities/patterns_in_the_wild.txt", "r", encoding="utf-8"
+            "./utilities/patterns_in_the_wild.txt", "r", encoding="utf-8"
         ) as infile:
             for line in infile.readlines():
                 line_x = line
@@ -105,11 +105,13 @@ class UpdateFrequencies:
                         errors.add(ee)
 
     def create_probability_object(self):
-        self.update_frequencies()
+        """Given a document produce a probability distribution"""
+        self.update_frequencies(self)
         prob_dict = {}
         for symbol in self.all_symbols.keys():
             prob_dict[symbol] = self.all_symbols[symbol] / self.total_symbols
-        self.prob_dict = prob_dict
+        return prob_dict
+        # self.prob_dict = prob_dict
 
 
 if __name__ == "__main__":
