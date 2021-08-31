@@ -211,7 +211,7 @@
         "kind": 6,
         "importPath": "RegexGenerator.generateRegex",
         "description": "RegexGenerator.generateRegex",
-        "peekOfCode": "class generateRegex:\n    \"\"\"Generate a regex give a string\"\"\"\n    seed = 0.2323\n    def __init__(self, string: str, negative_string: str):\n        self.string = string\n        self.negative_string = negative_string\n        self.max_patterns = 5\n        self.max_tries = 1000\n        self.found_patterns = set()\n        self.pattern_size: int = 3",
+        "peekOfCode": "class generateRegex:\n    \"\"\"Generate a regex give a string\"\"\"\n    seed = 0.2323\n    def __init__(self, string: str = \"abc\", negative_string: str = \"10\"):\n        self.string = string\n        self.negative_string = negative_string\n        self.max_patterns = 5\n        self.max_tries = 1000\n        self.found_patterns = set()\n        self.pattern_size: int = 3",
         "detail": "RegexGenerator.generateRegex",
         "documentation": {}
     },

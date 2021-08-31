@@ -7,3 +7,5 @@ RegexGenerator/utilities/__pycache__/__init__.cpython-38.pyc
 RegexGenerator/tests/__pycache__/test_all_features.cpython-39-pytest-6.2.4.pyc
 RegexGenerator/tests/__pycache__/test_all_features.cpython-39-pytest-6.2.4.pyc
 RegexGenerator/tests/__pycache__/test_all_features.cpython-39-pytest-6.2.4.pyc
+RegexGenerator/utilities/__pycache__/create_symbol_frequency.cpython-39.pyc
+RegexGenerator/utilities/__pycache__/create_symbol_frequency.cpython-39.pyc
