@@ -1,5 +1,66 @@
 [
     {
+        "label": "pyautogui",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pyautogui",
+        "description": "pyautogui",
+        "detail": "pyautogui",
+        "documentation": {}
+    },
+    {
+        "label": "sleep",
+        "importPath": "time",
+        "description": "time",
+        "isExtraImport": true,
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "pytesseract",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pytesseract",
+        "description": "pytesseract",
+        "detail": "pytesseract",
+        "documentation": {}
+    },
+    {
+        "label": "Output",
+        "importPath": "pytesseract",
+        "description": "pytesseract",
+        "isExtraImport": true,
+        "detail": "pytesseract",
+        "documentation": {}
+    },
+    {
+        "label": "argparse",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "argparse",
+        "description": "argparse",
+        "detail": "argparse",
+        "documentation": {}
+    },
+    {
+        "label": "cv2",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "cv2",
+        "description": "cv2",
+        "detail": "cv2",
+        "documentation": {}
+    },
+    {
+        "label": "pyttsx3",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pyttsx3",
+        "description": "pyttsx3",
+        "detail": "pyttsx3",
+        "documentation": {}
+    },
+    {
         "label": "generateRegex",
         "importPath": "RegexGenerator.generateRegex",
         "description": "RegexGenerator.generateRegex",
@@ -50,37 +111,20 @@
         "documentation": {}
     },
     {
-        "label": "Tuple",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "sys",
+        "label": "click",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "sys",
-        "description": "sys",
-        "detail": "sys",
-        "documentation": {}
-    },
-    {
-        "label": "argparse",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "argparse",
-        "description": "argparse",
-        "detail": "argparse",
+        "importPath": "click",
+        "description": "click",
+        "detail": "click",
         "documentation": {}
     },
     {
         "label": "UpdateFrequencies",
-        "importPath": "RegexGenerator.utilities.create_symbol_frequency",
-        "description": "RegexGenerator.utilities.create_symbol_frequency",
+        "importPath": "utilities.create_symbol_frequency",
+        "description": "utilities.create_symbol_frequency",
         "isExtraImport": true,
-        "detail": "RegexGenerator.utilities.create_symbol_frequency",
+        "detail": "utilities.create_symbol_frequency",
         "documentation": {}
     },
     {
@@ -141,6 +185,24 @@
         "importPath": "datetime.pytz",
         "description": "datetime.pytz",
         "detail": "datetime.pytz",
+        "documentation": {}
+    },
+    {
+        "label": "say_this",
+        "kind": 2,
+        "importPath": "DesktopAutomation.fully_automate_desktop",
+        "description": "DesktopAutomation.fully_automate_desktop",
+        "peekOfCode": "def say_this(message):\n    engine = pyttsx3.init()\n    engine.say(message)\n    engine.runAndWait()\ndef click_on_coords_of_text_in_image(image_path, text_to_find):\n    # load the input image, convert it from BGR to RGB channel ordering,\n    # and use Tesseract to localize each area of text in the input image\n    image = cv2.imread(image_path)\n    rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)\n    results = pytesseract.image_to_data(rgb, output_type=Output.DICT)",
+        "detail": "DesktopAutomation.fully_automate_desktop",
+        "documentation": {}
+    },
+    {
+        "label": "click_on_coords_of_text_in_image",
+        "kind": 2,
+        "importPath": "DesktopAutomation.fully_automate_desktop",
+        "description": "DesktopAutomation.fully_automate_desktop",
+        "peekOfCode": "def click_on_coords_of_text_in_image(image_path, text_to_find):\n    # load the input image, convert it from BGR to RGB channel ordering,\n    # and use Tesseract to localize each area of text in the input image\n    image = cv2.imread(image_path)\n    rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)\n    results = pytesseract.image_to_data(rgb, output_type=Output.DICT)\n    # loop over each of the individual text localizations\n    for i in range(0, len(results[\"text\"])):\n        # extract the bounding box coordinates of the text region from\n        # the current result",
+        "detail": "DesktopAutomation.fully_automate_desktop",
         "documentation": {}
     },
     {
@@ -211,8 +273,35 @@
         "kind": 6,
         "importPath": "RegexGenerator.generateRegex",
         "description": "RegexGenerator.generateRegex",
-        "peekOfCode": "class generateRegex:\n    \"\"\"Generate a regex give a string\"\"\"\n    seed = 0.2323\n    def __init__(self, string: str = \"abc\", negative_string: str = \"10\"):\n        self.string = string\n        self.negative_string = negative_string\n        self.max_patterns = 5\n        self.max_tries = 1000\n        self.found_patterns = set()\n        self.pattern_size: int = 3",
+        "peekOfCode": "class generateRegex:\n    \"\"\"Generate a regex give a string\"\"\"\n    seed = 0.2323\n    def __init__(self, string: str = \"abc\", negative_string: str = \"10\"):\n        self.string = string\n        self.negative_string = negative_string\n        self.max_patterns = 2\n        self.max_tries = 10\n        self.found_patterns = set()\n        self.tried_patterns = []",
         "detail": "RegexGenerator.generateRegex",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "RegexGenerator.generateRegex",
+        "description": "RegexGenerator.generateRegex",
+        "peekOfCode": "def main(string, negative, mode):\n    \"\"\"Generate regex/string based on input\"\"\"\n    gen = generateRegex(string, negative)\n    result = None\n    if mode == \"regex\":\n        # generate regex from string\n        gen.generate_regex_from_string()\n        result = gen.found_patterns\n    elif mode == \"string\":\n        # generate string from regex",
+        "detail": "RegexGenerator.generateRegex",
+        "documentation": {}
+    },
+    {
+        "label": "symbols",
+        "kind": 5,
+        "importPath": "RegexGenerator.word_generator",
+        "description": "RegexGenerator.word_generator",
+        "peekOfCode": "symbols = [r\"qazwsxedcrfvtgbyhnujmik,ol.;p['/]\\\\1234567890-=!@#$%^&*()_+{}|:?><\"]\nword = \"\"\nwhile len(word) < 5:\n    word += random.choice(symbols)\nprint(word)",
+        "detail": "RegexGenerator.word_generator",
+        "documentation": {}
+    },
+    {
+        "label": "word",
+        "kind": 5,
+        "importPath": "RegexGenerator.word_generator",
+        "description": "RegexGenerator.word_generator",
+        "peekOfCode": "word = \"\"\nwhile len(word) < 5:\n    word += random.choice(symbols)\nprint(word)",
+        "detail": "RegexGenerator.word_generator",
         "documentation": {}
     },
     {

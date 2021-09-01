@@ -1,10 +1,9 @@
 import random
 import re
-from typing import List, Set, Tuple
-import sys
-import argparse
+from typing import List, Set
+import click
 
-from RegexGenerator.utilities.create_symbol_frequency import UpdateFrequencies as uf
+from utilities.create_symbol_frequency import UpdateFrequencies as uf
 
 
 class generateRegex:
@@ -16,12 +15,23 @@ class generateRegex:
     def __init__(self, string: str = "abc", negative_string: str = "10"):
         self.string = string
         self.negative_string = negative_string
-        self.max_patterns = 5
-        self.max_tries = 1000
+        self.max_patterns = 2
+        self.max_tries = 10
         self.found_patterns = set()
-        self.pattern_size: int = 3
-        self.unique_patterns: int = 100
+        self.tried_patterns = []
+        self.pattern_size: int = 10
+        self.unique_patterns: int = 10000
         self.symbol_map = uf.create_probability_object(uf)
+
+    def get_random_size(self):
+        return random.choice(range(1, 10))
+
+    def symbol_choices(self):
+        return random.choices(
+            [a for a in self.symbol_map.keys()],
+            [a for a in self.symbol_map.values()],
+            k=200,
+        )
 
     def generate_regex_pattern(self):
         all_patterns = []
@@ -29,15 +39,12 @@ class generateRegex:
         while len(all_patterns) < self.unique_patterns:
             try:
                 pattern = r""
-                while len(pattern) < self.pattern_size:
-                    choice = random.choices(
-                        [a for a in self.symbol_map.keys()],
-                        [a for a in self.symbol_map.values()],
-                        k=1,
-                    )
-                    random_symbol = random.choice(choice[0])
+                while len(pattern) < self.get_random_size():
+                    choice = self.symbol_choices()
+                    random_symbol = choice[0]
                     pattern += random_symbol
-                all_patterns.append([self.pattern_size, pattern])
+                self.tried_patterns.append(pattern)
+                all_patterns.append(pattern)
             except IndexError as ie:
                 print(ie)
         return all_patterns
@@ -51,6 +58,7 @@ class generateRegex:
         while not matching_string and tries < max_tries:
             try:
                 symbols_count = random.choice(range(1, max_symbols))
+                print(symbols_count)
                 string = ""
                 while len(string) < symbols_count:
                     print(string)
@@ -59,7 +67,7 @@ class generateRegex:
                             [a for a in self.symbol_map.keys()]
                         )
                         string += string_choice
-                    if re.match(pattern, string):
+                    if re.fullmatch(pattern, string):
                         matching_string.add(string)
                         break
                     else:
@@ -95,42 +103,49 @@ class generateRegex:
         while tries < self.max_tries:
             try:
                 tries += 1
-                new_pattern = self.generate_regex_pattern()
-                for pattern in new_pattern:
-                    try:
-                        pattern = pattern[1]
-                        assert isinstance(self.string, str)
-                        if re.match(pattern, self.string):
-                            self.found_patterns.add(pattern)
-                            print(
-                                f"Pattern match found! {pattern} found:{len(self.found_patterns)}",
-                                end="\r",
-                            )
-                    except Exception as ee:
-                        pass
-            except AssertionError as ae:
-                print("2a:", ae)
-            except Exception as ee:
-                print("2: ", ee)
+                if tries % 100 == 0:
+                    print(f"Tries: {tries}", end="\r")
+                patterns_to_try = self.generate_regex_pattern()
+                for _, pattern in patterns_to_try:
+                    if re.fullmatch(pattern, self.string):
+                        self.found_patterns.add(pattern)
+                    else:
+                        print(f"Doesn't Match! {pattern} -> {self.string}")
+            except Exception as e:
+                pass
         if self.negative_string:
             self.found_patterns = self.best_pattern()
 
 
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Generate Regex/String")
-    parser.add_argument(
-        "string",
-        type=str,
-        help="The <string> used to generate the regex pattern",
-    )
-    parser.add_argument(
-        "--negative",
-        type=str,
-        help="<string> that should not match generated regex pattern",
-    )
-    args = parser.parse_args()
-    generate = generateRegex(args.string)
-    if args.negative:
-        generate.generate_regex_from_string()
+@click.command()
+@click.option("--string", prompt="Input string?", help="Input symbols")
+@click.option(
+    "--negative",
+    prompt="Which string must not match?",
+    help="Symbol pattern that shouldn't match",
+)
+@click.option(
+    "--mode",
+    prompt="regex (generate pattern) OR string (generate string from pattern)?",
+    help="The function to run on your input string",
+)
+def main(string, negative, mode):
+    """Generate regex/string based on input"""
+
+    gen = generateRegex(string, negative)
+    result = None
+    if mode == "regex":
+        # generate regex from string
+        gen.generate_regex_from_string()
+        result = gen.found_patterns
+    elif mode == "string":
+        # generate string from regex
+        result = gen.generate_from_regex(string)
+    if result:
+        print(f"OUTPUT:\n\n", result)
     else:
-        generate.generate_regex_pattern()
+        print("No matches found!")
+
+
+if __name__ == "__main__":
+    main()
