@@ -14,5 +14,7 @@ find -empty
 
 # Search for files by contents
 
-## Search for all files recursively, case-insensitive containing the string Miraszewski 
-grep "Miraszewski" -ri .
+## Search for all files recursively, case-insensitive, with location line number > containing the string Miraszewski 
+grep "Miraszewski" -rin .
+
+
