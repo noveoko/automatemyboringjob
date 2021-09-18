@@ -38,3 +38,14 @@ Pelosi schools Trump in the art of power
 Senator slams Ted Cruz's 'crocodile tears
 ...
 ```
+# Example 2: Remove Duplicate Files
+
+from the remove_duplicate_files directory run:
+`python delete_duplicates.py`
+You will be prompted for a root path and then once you hit enter the following steps will take place:
+
+1. All files will be found and opened and assigned a hash number using Python's built in `hash` module.
+2. Next all superfluous files with more than one hash will be deleted.
+3. At the end you will be promted to clean up the files created or leave them as they are.
+ 
+
