@@ -48,4 +48,9 @@ You will be prompted for a root path and then once you hit enter the following s
 2. Next all superfluous files with more than one hash will be deleted.
 3. At the end you will be promted to clean up the files created or leave them as they are.
  
+# Example 3: Convert a Directory of PDF files into Audio books
+
+Run
+`python ebook_to_audiobook.py <path_to_your_PDF_directory>`
+
 
