@@ -53,4 +53,7 @@ You will be prompted for a root path and then once you hit enter the following s
 Run
 `python ebook_to_audiobook.py <path_to_your_PDF_directory>`
 
+# Example 4: Find similar images using a naive hand-crafted image hashing approach
 
+Run
+`python simple_image_hash.py` <path_to_image_files>`
