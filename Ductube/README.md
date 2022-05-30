@@ -1,5 +1,7 @@
 ## Ductube
 
+![alt text](static/img/duct_tape_icon.png "Duct tape Icon")
+
 Filter Youtube recommendations using rudimentary rules defined as keywords
 
 ### Installation
@@ -28,3 +30,4 @@ In order to block-unblock certain keywords of channel names simply:
 3. Save the file
 4. In the extensions feature of your browser select: **update**
 5. Reload YT and your changes should be visible
+
