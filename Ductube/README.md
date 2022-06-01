@@ -4,6 +4,10 @@
 
 Filter Youtube recommendations using rudimentary rules defined as keywords
 
+## Updates
+
+* **Reddit** support added!
+
 ### Installation
 
 #### Brave
@@ -30,4 +34,3 @@ In order to block-unblock certain keywords of channel names simply:
 3. Save the file
 4. In the extensions feature of your browser select: **update**
 5. Reload YT and your changes should be visible
-
