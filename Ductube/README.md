@@ -2,7 +2,7 @@
 
 ![alt text](static/img/duct_tape_icon.png "Duct tape Icon")
 
-Filter Youtube recommendations using rudimentary rules defined as keywords
+Filter Youtube, Reddit recommendations using rudimentary rules defined as keywords
 
 ## Updates
 
