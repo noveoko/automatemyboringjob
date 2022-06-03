@@ -2,9 +2,9 @@
 console.log("Google Filter: RUNNING");
 
 keywords = ['analyticsvidhya.com','machinelearningmastery.com','medium.com','geeksforgeeks.org']
+blocked = []
 
-function filterPage() {
-    blocked = []
+function filterPage() {    
     console.log(`Filtering Pages...`)
     try{
     search_results = document.querySelector("#search").querySelectorAll("div")[1];
