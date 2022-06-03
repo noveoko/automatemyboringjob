@@ -4,6 +4,7 @@ console.log("Google Filter: RUNNING");
 keywords = ['analyticsvidhya.com','machinelearningmastery.com','medium.com','geeksforgeeks.org']
 
 function filterPage() {
+    blocked = []
     console.log(`Filtering Pages...`)
     try{
     search_results = document.querySelector("#search").querySelectorAll("div")[1];
@@ -16,9 +17,15 @@ function filterPage() {
                 candidate = keywords[i]
                 if(citation_url.includes(candidate)){
                     //hide content
-                    console.log(`Hiding: ${candidate} at ${citation_url}`)
                     try{
-                        contains_citation.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.hidden=true
+                        top_div = contains_citation.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode
+                        top_div_url = top_div.querySelector("h3").textContent
+                        if(!blocked.includes(top_div_url)){
+                            console.log(`Hiding: ${candidate} at ${top_div_url}`)
+                            blocked.push(top_div_url)
+                            top_div.hidden=true
+                        }
+
                     }
                     catch{
                         console.log(`Unable to hide: ${citation_url}`)
