@@ -1,4 +1,5 @@
 window.addEventListener('DOMContentLoaded', (event) => {
+  document.getElementById("grab").addEventListener('click', () => {
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
       if (chrome.scripting) {
         chrome.scripting.executeScript({
@@ -8,3 +9,4 @@ window.addEventListener('DOMContentLoaded', (event) => {
       }
     });
   });
+});

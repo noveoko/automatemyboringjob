@@ -1,0 +1,1 @@
+Get-ChildItem -Path '.\elementCopy\' -Include *.txt, *.md, *.css, *.html, *.js -Recurse | Get-Content | Out-File 'output_file.txt'
