@@ -1,8 +1,8 @@
 🍴
 
-# Element Grabber
+# Element Copy
 
-Element Grabber is a simple Chrome extension that allows users to easily download the HTML of an element along with its styles by just clicking on it in the webpage. The downloaded HTML is styled as per the original webpage, making it easy to reuse or inspect.
+Element Copy is a simple Chrome extension that allows users to easily download the HTML of an element along with its styles by just clicking on it in the webpage. The downloaded HTML is styled as per the original webpage, making it easy to reuse or inspect.
 
 ## Installation
 
