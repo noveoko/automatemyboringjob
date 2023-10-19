@@ -1,8 +1,16 @@
-# Created with help from GPT3.5
-     const canvas = document.getElementById("canvas");
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bacteria Simulation with Collision and Lifespan</title>
+  </head>
+  <body>
+    <canvas id="canvas" width="800" height="400"></canvas>
+
+    <script>
+      const canvas = document.getElementById("canvas");
       const ctx = canvas.getContext("2d");
 
-      const bacteriaCount = 120;
+      const bacteriaCount = 12;
       const bacteriaArray = [];
       const lifespanData = [];
 
@@ -121,3 +129,6 @@
       }
 
       animate();
+    </script>
+  </body>
+</html>
