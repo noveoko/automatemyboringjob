@@ -1,0 +1,123 @@
+# Created with help from GPT3.5
+     const canvas = document.getElementById("canvas");
+      const ctx = canvas.getContext("2d");
+
+      const bacteriaCount = 120;
+      const bacteriaArray = [];
+      const lifespanData = [];
+
+      // Function to generate a random number within a range
+      function randomRange(min, max) {
+        return Math.random() * (max - min) + min;
+      }
+
+      // Calculate distance between two points
+      function distance(x1, y1, x2, y2) {
+        return Math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2);
+      }
+
+      // Bacteria class
+      class Bacteria {
+        constructor(x, y) {
+          this.x = x;
+          this.y = y;
+          this.radius = randomRange(5, 20);
+          this.color = "green";
+          this.speedX = randomRange(-2, 2);
+          this.speedY = randomRange(-2, 2);
+          this.lifespan = Math.floor(randomRange(5, 1000));
+          collectLifespanData(this.lifespan);
+        }
+
+        update() {
+          // Remove bacteria when lifespan reaches 0
+          if (this.lifespan <= 0) {
+            const index = bacteriaArray.indexOf(this);
+            if (index > -1) {
+              bacteriaArray.splice(index, 1);
+              checkSimulationEnd();
+            }
+            return;
+          }
+
+          // Reduce lifespan
+          this.lifespan--;
+
+          // Move the bacteria
+          this.x += this.speedX;
+          this.y += this.speedY;
+
+          // Bounce off canvas edges
+          if (this.x + this.radius > canvas.width || this.x - this.radius < 0) {
+            this.speedX = -this.speedX;
+          }
+          if (this.y + this.radius > canvas.height || this.y - this.radius < 0) {
+            this.speedY = -this.speedY;
+          }
+
+          // Change size over time
+          this.radius += randomRange(-0.5, 0.5);
+
+          // Ensure radius stays within a certain range
+          this.radius = Math.max(5, Math.min(30, this.radius));
+
+          // Handle collision with other bacteria
+          for (const other of bacteriaArray) {
+            if (other === this) continue;
+
+            const dist = distance(this.x, this.y, other.x, other.y);
+            if (dist < this.radius + other.radius) {
+              // Bounce off each other
+              const angle = Math.atan2(other.y - this.y, other.x - this.x);
+              const overlap = this.radius + other.radius - dist;
+              this.speedX += (overlap * 0.1) * Math.cos(angle);
+              this.speedY += (overlap * 0.1) * Math.sin(angle);
+            }
+          }
+
+          // Draw the bacteria
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+          ctx.fillStyle = this.color;
+          ctx.fill();
+          ctx.closePath();
+        }
+      }
+
+      // Create initial bacteria objects
+      for (let i = 0; i < bacteriaCount; i++) {
+        const x = randomRange(0, canvas.width);
+        const y = randomRange(0, canvas.height);
+        bacteriaArray.push(new Bacteria(x, y));
+      }
+
+      // Check if the simulation has ended
+      function checkSimulationEnd() {
+        if (bacteriaArray.length === 0) {
+          generateReport();
+        }
+      }
+
+      // Collect lifespan data
+      function collectLifespanData(lifespan) {
+        lifespanData.push(lifespan);
+      }
+
+      // Report generation function
+      function generateReport() {
+        console.log("Simulation Over - Lifespan Summary:");
+        console.log(lifespanData);
+      }
+
+      // Animation loop
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        for (const bacteria of bacteriaArray) {
+          bacteria.update();
+        }
+
+        requestAnimationFrame(animate);
+      }
+
+      animate();
