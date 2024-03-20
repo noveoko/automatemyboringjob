@@ -1,5 +1,6 @@
 import sqlite3
 import mailbox
+from email.utils import parsedate_to_datetime
 
 def create_table(conn):
     cursor = conn.cursor()
@@ -8,13 +9,14 @@ def create_table(conn):
                         sender TEXT,
                         receiver TEXT,
                         subject TEXT,
-                        body TEXT)''')
+                        body TEXT,
+                        datestamp TEXT)''')  # Adding a new column for datestamp
     conn.commit()
 
-def insert_email(conn, sender, receiver, subject, body):
+def insert_email(conn, sender, receiver, subject, body, datestamp):
     cursor = conn.cursor()
-    cursor.execute('''INSERT INTO emails (sender, receiver, subject, body)
-                      VALUES (?, ?, ?, ?)''', (sender, receiver, subject, body))
+    cursor.execute('''INSERT INTO emails (sender, receiver, subject, body, datestamp)
+                      VALUES (?, ?, ?, ?, ?)''', (sender, receiver, subject, body, datestamp))
     conn.commit()
 
 def mbox_to_sqlite(mbox_file, db_file):
@@ -32,7 +34,9 @@ def mbox_to_sqlite(mbox_file, db_file):
                     body += part.get_payload()
         else:
             body = message.get_payload()
-        insert_email(conn, sender, receiver, subject, body)
+        # Convert date string to datetime object
+        datestamp = parsedate_to_datetime(message['Date']).isoformat() if message['Date'] else None
+        insert_email(conn, sender, receiver, subject, body, datestamp)
     conn.close()
 
 # Usage example
