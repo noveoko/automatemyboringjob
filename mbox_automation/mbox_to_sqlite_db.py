@@ -23,7 +23,7 @@ def mbox_to_sqlite(mbox_file, db_file):
     mbox = mailbox.mbox(mbox_file)
     for message in mbox:
         sender = message['From']
-        receiver = message['To']
+        receiver = message.get('To', '') # Check if 'To' field exists
         subject = message['Subject']
         body = ""
         if message.is_multipart():
