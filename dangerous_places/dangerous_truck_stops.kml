@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+    <Document id="1">
+        <Placemark id="3">
+            <name>FLYING J #602</name>
+            <Point id="2">
+                <coordinates>-86.8024326,33.5206824,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="5">
+            <name>PILOT TRAVEL CENTER #302</name>
+            <Point id="4">
+                <coordinates>-88.2023936859469,30.5463684,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="7">
+            <name>PILOT TRAVEL CENTER #369</name>
+            <Point id="6">
+                <coordinates>-86.8024326,33.5206824,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="9">
+            <name>FLYING J #611</name>
+            <Point id="8">
+                <coordinates>-112.205449,33.4609104,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="11">
+            <name>LOVE'S #659</name>
+            <Point id="10">
+                <coordinates>-112.259309,33.4500497,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="13">
+            <name>PILOT TRAVEL CENTER #459</name>
+            <Point id="12">
+                <coordinates>-112.349602,33.4355977,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="15">
+            <name>PILOT TRAVEL CENTER #593</name>
+            <Point id="14">
+                <coordinates>-110.974847,32.2228765,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="17">
+            <name>TA COACHELLA #5050</name>
+            <Point id="16">
+                <coordinates>-116.17628,33.6794956,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="19">
+            <name>PILOT TRAVEL CENTER #237</name>
+            <Point id="18">
+                <coordinates>-121.635188,36.689631,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="21">
+            <name>TA ONTARIO #417</name>
+            <Point id="20">
+                <coordinates>-117.64843,34.065846,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="23">
+            <name>FLYING J #1080</name>
+            <Point id="22">
+                <coordinates>-121.1296949,37.471623,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="25">
+            <name>PETRO ONTARIO #5007</name>
+            <Point id="24">
+                <coordinates>-117.64843,34.065846,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="27">
+            <name>LOVE'S #207</name>
+            <Point id="26">
+                <coordinates>-116.17628,33.6794956,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="29">
+            <name>TA LIVINGSTON #6170</name>
+            <Point id="28">
+                <coordinates>-120.738302,37.387501,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="31">
+            <name>PILOT TRAVEL CENTER #307</name>
+            <Point id="30">
+                <coordinates>-116.5430685,33.9227924,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="33">
+            <name>LOVE'S #908</name>
+            <Point id="32">
+                <coordinates>-104.866554,39.883672,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="35">
+            <name>PILOT TRAVEL CENTER #316</name>
+            <Point id="34">
+                <coordinates>-104.985798,39.740959,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="37">
+            <name>TA COMMERCE CITY #5070</name>
+            <Point id="36">
+                <coordinates>-104.866554,39.883672,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="39">
+            <name>FLYING J #619</name>
+            <Point id="38">
+                <coordinates>-104.793645,39.762978,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="41">
+            <name>Pilot Dealer #897</name>
+            <Point id="40">
+                <coordinates>-80.2456045,25.9420377,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="43">
+            <name>PILOT TRAVEL CENTER #1046</name>
+            <Point id="42">
+                <coordinates>-80.716649,26.666745,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="45">
+            <name>PETRO ATLANTA #6322</name>
+            <Point id="44">
+                <coordinates>-84.3902644,33.7489924,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="47">
+            <name>PILOT TRAVEL CENTER #331</name>
+            <Point id="46">
+                <coordinates>-84.3902644,33.7489924,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="49">
+            <name>LOVE'S #909</name>
+            <Point id="48">
+                <coordinates>-84.3257571,33.6448311,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="51">
+            <name>PILOT TRAVEL CENTER #260</name>
+            <Point id="50">
+                <coordinates>-84.1556809,31.5782062,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="53">
+            <name>PILOT TRAVEL CENTER #192</name>
+            <Point id="52">
+                <coordinates>-83.5108284,31.4549719,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="55">
+            <name>PILOT TRAVEL CENTER #313</name>
+            <Point id="54">
+                <coordinates>-90.159707,38.6268666,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="57">
+            <name>FLYING J #642</name>
+            <Point id="56">
+                <coordinates>-90.1200498,38.58979,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="59">
+            <name>ROAD RANGER #378</name>
+            <Point id="58">
+                <coordinates>-87.6244212,41.8755616,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="61">
+            <name>MR. FUEL #1020</name>
+            <Point id="60">
+                <coordinates>-87.2389246,41.5750369,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="63">
+            <name>TA LAKE STATION #6219</name>
+            <Point id="62">
+                <coordinates>-87.2389246,41.5750369,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="65">
+            <name>LOVE'S #417</name>
+            <Point id="64">
+                <coordinates>-87.3370646,41.6020962,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="67">
+            <name>PETRO GARY #6369</name>
+            <Point id="66">
+                <coordinates>-87.3370646,41.6020962,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="69">
+            <name>PILOT TRAVEL CENTER #30</name>
+            <Point id="68">
+                <coordinates>-85.7681979,39.7855096,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="71">
+            <name>FLYING J #650</name>
+            <Point id="70">
+                <coordinates>-87.2389246,41.5750369,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="73">
+            <name>LOVE'S #912</name>
+            <Point id="72">
+                <coordinates>-95.8519484,41.258841,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="75">
+            <name>PILOT TRAVEL CENTER #329</name>
+            <Point id="74">
+                <coordinates>-95.8519484,41.258841,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="77">
+            <name>TA LAFAYETTE #770</name>
+            <Point id="76">
+                <coordinates>-92.0178202,30.2262187,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="79">
+            <name>LOVE'S #208</name>
+            <Point id="78">
+                <coordinates>-90.0367512,32.612602,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="81">
+            <name>PETRO JACKSON #6328</name>
+            <Point id="80">
+                <coordinates>-90.205942,32.2747867,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="83">
+            <name>PILOT TRAVEL CENTER #77</name>
+            <Point id="82">
+                <coordinates>-90.1830408,32.2998686,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="85">
+            <name>LOVE'S #402</name>
+            <Point id="84">
+                <coordinates>-88.8893818,30.4007626,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="87">
+            <name>LOVE'S #461</name>
+            <Point id="86">
+                <coordinates>-90.1910154,38.6280278,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="89">
+            <name>PILOT TRAVEL CENTER #341</name>
+            <Point id="88">
+                <coordinates>-115.121584,36.2005843,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="91">
+            <name>LOVE'S #936</name>
+            <Point id="90">
+                <coordinates>-115.148516,36.1672559,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="93">
+            <name>TA SPARKS #428</name>
+            <Point id="92">
+                <coordinates>-119.7487235,39.5404679,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="95">
+            <name>FLYING J #770</name>
+            <Point id="94">
+                <coordinates>-117.7347619,40.972415,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="97">
+            <name>FLYING J #689</name>
+            <Point id="96">
+                <coordinates>-106.74652371022378,35.0789377,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="99">
+            <name>LOVE'S #210</name>
+            <Point id="98">
+                <coordinates>-106.650985,35.0841034,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="101">
+            <name>TA ALBUQUERQUE #424</name>
+            <Point id="100">
+                <coordinates>-106.623907,35.109291,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="103">
+            <name>PILOT TRAVEL CENTER #266</name>
+            <Point id="102">
+                <coordinates>-106.779807,32.3140354,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="105">
+            <name>PILOT TRAVEL CENTER #275</name>
+            <Point id="104">
+                <coordinates>-80.8430827,35.2272086,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="107">
+            <name>PILOT TRAVEL CENTER #7996</name>
+            <Point id="106">
+                <coordinates>-80.619737,35.05109,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="109">
+            <name>TA TROUTDALE #5060</name>
+            <Point id="108">
+                <coordinates>-122.391155,45.5317928,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="111">
+            <name>LOVE'S #449</name>
+            <Point id="110">
+                <coordinates>-122.391155,45.5317928,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="113">
+            <name>FLYING J CARDLOCK #842</name>
+            <Point id="112">
+                <coordinates>-104.567691,50.465847,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="115">
+            <name>FLYING J #712</name>
+            <Point id="114">
+                <coordinates>-81.0235148,34.0646966,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="117">
+            <name>PILOT TRAVEL CENTER #1082</name>
+            <Point id="116">
+                <coordinates>-79.9748103,32.8546197,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="119">
+            <name>LOVE'S #429</name>
+            <Point id="118">
+                <coordinates>-86.7742984,36.1622767,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="121">
+            <name>TA NASHVILLE #5041</name>
+            <Point id="120">
+                <coordinates>-86.7742984,36.1622767,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="123">
+            <name>LOVE'S #344</name>
+            <Point id="122">
+                <coordinates>-90.0517638,35.1460249,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="125">
+            <name>PILOT TRAVEL CENTER #413</name>
+            <Point id="124">
+                <coordinates>-86.7742984,36.1622767,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="127">
+            <name>PILOT TRAVEL CENTER #404</name>
+            <Point id="126">
+                <coordinates>-86.3921096,35.8460396,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="129">
+            <name>FLYING J #729</name>
+            <Point id="128">
+                <coordinates>-95.3676974,29.7589382,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="131">
+            <name>LOVE'S #913</name>
+            <Point id="130">
+                <coordinates>-96.7968559,32.7762719,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="133">
+            <name>TA DALLAS SOUTH #5078</name>
+            <Point id="132">
+                <coordinates>-96.7968559,32.7762719,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="135">
+            <name>LOVE'S #315</name>
+            <Point id="134">
+                <coordinates>-95.3676974,29.7589382,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="137">
+            <name>PILOT TRAVEL CENTER #375</name>
+            <Point id="136">
+                <coordinates>-95.3676974,29.7589382,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="139">
+            <name>LOVE'S #294</name>
+            <Point id="138">
+                <coordinates>-96.7968559,32.7762719,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="141">
+            <name>FLYING J #726</name>
+            <Point id="140">
+                <coordinates>-96.7520918526082,32.6572148,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="143">
+            <name>FLYING J #727</name>
+            <Point id="142">
+                <coordinates>-98.1436791934583,26.33591155,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="145">
+            <name>LOVE'S #419</name>
+            <Point id="144">
+                <coordinates>-95.3676974,29.7589382,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="147">
+            <name>PILOT TRAVEL CENTER #433</name>
+            <Point id="146">
+                <coordinates>-96.7968559,32.7762719,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="149">
+            <name>LOVE'S #927</name>
+            <Point id="148">
+                <coordinates>-96.9442177,32.8295183,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="151">
+            <name>FLYING J #1057</name>
+            <Point id="150">
+                <coordinates>-95.1958356,29.7124119,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="153">
+            <name>LOVE'S #327</name>
+            <Point id="152">
+                <coordinates>-97.856109,27.5158689,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="155">
+            <name>LOVE'S #946</name>
+            <Point id="154">
+                <coordinates>-98.4951405,29.4246002,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="157">
+            <name>PETRO SAN ANTONIO #6305</name>
+            <Point id="156">
+                <coordinates>-98.37927228429376,29.4373181,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="159">
+            <name>FLYING J #746</name>
+            <Point id="158">
+                <coordinates>-111.886797,40.7596198,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="161">
+            <name>LOVE'S #436</name>
+            <Point id="160">
+                <coordinates>-111.677235,40.744212,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="163">
+            <name>LOVE'S #448</name>
+            <Point id="162">
+                <coordinates>-122.438329,47.2455013,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="165">
+            <name>FLYING J BROADWAY #970</name>
+            <Point id="164">
+                <coordinates>-119.083439,46.262561,0.0</coordinates>
+            </Point>
+        </Placemark>
+    </Document>
+</kml>
