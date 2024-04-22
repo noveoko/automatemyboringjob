@@ -150,7 +150,7 @@
     - [ ] Docker
     - [ ] Kubernetes
   - [ ] Serverless Architectures
-    - [X] AWS Lambda | [Lambda Local Development Tutorial](https://www.youtube.com/watch?v=fEZE3rm8Ma8)
+    - [ ] AWS Lambda | [Lambda Local Development Tutorial](https://www.youtube.com/watch?v=fEZE3rm8Ma8)
     - [ ] Azure Functions
     - [ ] Google Cloud Functions
 - [ ] DevOps
