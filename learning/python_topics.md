@@ -126,7 +126,7 @@
   - [ ] Platform-as-a-Service
     - [ ] Heroku
     - [ ] PythonAnywhere
-    - [ ] AWS CodeStar
+    - [ ]  CodeStar
   - [ ] Operating systems
     - [ ] Ubuntu Linux
     - [ ] macOS
@@ -150,7 +150,7 @@
     - [ ] Docker
     - [ ] Kubernetes
   - [ ] Serverless Architectures
-    - [ ] AWS Lambda
+    - [X] AWS Lambda | [Lambda Local Development Tutorial](https://www.youtube.com/watch?v=fEZE3rm8Ma8)
     - [ ] Azure Functions
     - [ ] Google Cloud Functions
 - [ ] DevOps
