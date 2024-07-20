@@ -1,0 +1,42 @@
+{
+  "cloth": {
+    "quality": 12,
+    "mass": 0.5,
+    "air_damping": 0.03,
+    "bending_model": "LINEAR",
+    "bend_stiffness": 0.8,
+    "bending_stiffness": 0.8,
+    "compression_damping": 0.05,
+    "compression_stiffness": 40,
+    "density_target": 1.0,
+    "density_strength": 0.8,
+    "shear_damping": 0.05,
+    "shear_stiffness": 25,
+    "tension_damping": 0.05,
+    "tension_stiffness": 60,
+    "use_pressure": false,
+    "use_dynamic_mesh": true,
+    "shrink_min": 0.98,
+    "shrink_max": 1.02,
+    "pin_stiffness": 1.0,
+    "collision": {
+      "use_collision": true,
+      "use_self_collision": true,
+      "distance_min": 0.002,
+      "friction": 0.7,
+      "damping": 0.3,
+      "thickness_outer": 0.002,
+      "thickness_inner": 0.002,
+      "self_friction": 0.7,
+      "self_distance_min": 0.002,
+      "self_impulse_clamp": 0.1
+    },
+    "internal_springs": {
+      "internal_spring_max_diversion": 0.5,
+      "internal_spring_max_length": 0.08,
+      "internal_spring_normal_check": true,
+      "internal_tension_stiffness": 50,
+      "internal_compression_stiffness": 40
+    }
+  }
+}
