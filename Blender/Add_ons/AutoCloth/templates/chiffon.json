@@ -1,0 +1,42 @@
+{
+  "chiffon": {
+    "quality": 15,
+    "mass": 0.2,
+    "air_damping": 0.05,
+    "bending_model": "LINEAR",
+    "bend_stiffness": 0.3,
+    "bending_stiffness": 0.3,
+    "compression_damping": 0.03,
+    "compression_stiffness": 20,
+    "density_target": 0.7,
+    "density_strength": 0.5,
+    "shear_damping": 0.03,
+    "shear_stiffness": 15,
+    "tension_damping": 0.03,
+    "tension_stiffness": 30,
+    "use_pressure": false,
+    "use_dynamic_mesh": true,
+    "shrink_min": 0.97,
+    "shrink_max": 1.03,
+    "pin_stiffness": 0.8,
+    "collision": {
+      "use_collision": true,
+      "use_self_collision": true,
+      "distance_min": 0.001,
+      "friction": 0.4,
+      "damping": 0.2,
+      "thickness_outer": 0.001,
+      "thickness_inner": 0.001,
+      "self_friction": 0.4,
+      "self_distance_min": 0.001,
+      "self_impulse_clamp": 0.05
+    },
+    "internal_springs": {
+      "internal_spring_max_diversion": 0.7,
+      "internal_spring_max_length": 0.1,
+      "internal_spring_normal_check": true,
+      "internal_tension_stiffness": 25,
+      "internal_compression_stiffness": 20
+    }
+  }
+}
