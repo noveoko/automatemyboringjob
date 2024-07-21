@@ -1,0 +1,42 @@
+{
+  "vegea": {
+    "quality": 11,
+    "mass": 0.4,
+    "air_damping": 0.035,
+    "bending_model": "LINEAR",
+    "bend_stiffness": 0.8,
+    "bending_stiffness": 0.8,
+    "compression_damping": 0.045,
+    "compression_stiffness": 55,
+    "density_target": 1.05,
+    "density_strength": 0.95,
+    "shear_damping": 0.045,
+    "shear_stiffness": 50,
+    "tension_damping": 0.045,
+    "tension_stiffness": 65,
+    "use_pressure": false,
+    "use_dynamic_mesh": false,
+    "shrink_min": 0.97,
+    "shrink_max": 1.03,
+    "pin_stiffness": 1.2,
+    "collision": {
+      "use_collision": true,
+      "use_self_collision": true,
+      "distance_min": 0.0018,
+      "friction": 0.65,
+      "damping": 0.23,
+      "thickness_outer": 0.0018,
+      "thickness_inner": 0.0018,
+      "self_friction": 0.65,
+      "self_distance_min": 0.0018,
+      "self_impulse_clamp": 0.07
+    },
+    "internal_springs": {
+      "internal_spring_max_diversion": 0.45,
+      "internal_spring_max_length": 0.07,
+      "internal_spring_normal_check": true,
+      "internal_tension_stiffness": 60,
+      "internal_compression_stiffness": 50
+    }
+  }
+}
