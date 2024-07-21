@@ -1,0 +1,42 @@
+{
+  "apple_leather": {
+    "quality": 10,
+    "mass": 0.45,
+    "air_damping": 0.03,
+    "bending_model": "LINEAR",
+    "bend_stiffness": 0.9,
+    "bending_stiffness": 0.9,
+    "compression_damping": 0.04,
+    "compression_stiffness": 60,
+    "density_target": 1.1,
+    "density_strength": 1.0,
+    "shear_damping": 0.04,
+    "shear_stiffness": 55,
+    "tension_damping": 0.04,
+    "tension_stiffness": 70,
+    "use_pressure": false,
+    "use_dynamic_mesh": false,
+    "shrink_min": 0.98,
+    "shrink_max": 1.02,
+    "pin_stiffness": 1.3,
+    "collision": {
+      "use_collision": true,
+      "use_self_collision": true,
+      "distance_min": 0.002,
+      "friction": 0.7,
+      "damping": 0.25,
+      "thickness_outer": 0.002,
+      "thickness_inner": 0.002,
+      "self_friction": 0.7,
+      "self_distance_min": 0.002,
+      "self_impulse_clamp": 0.08
+    },
+    "internal_springs": {
+      "internal_spring_max_diversion": 0.4,
+      "internal_spring_max_length": 0.06,
+      "internal_spring_normal_check": true,
+      "internal_tension_stiffness": 65,
+      "internal_compression_stiffness": 55
+    }
+  }
+}
