@@ -1,0 +1,42 @@
+{
+  "lyocell": {
+    "quality": 11,
+    "mass": 0.3,
+    "air_damping": 0.025,
+    "bending_model": "LINEAR",
+    "bend_stiffness": 0.5,
+    "bending_stiffness": 0.5,
+    "compression_damping": 0.035,
+    "compression_stiffness": 45,
+    "density_target": 0.95,
+    "density_strength": 0.85,
+    "shear_damping": 0.035,
+    "shear_stiffness": 40,
+    "tension_damping": 0.035,
+    "tension_stiffness": 55,
+    "use_pressure": false,
+    "use_dynamic_mesh": true,
+    "shrink_min": 0.96,
+    "shrink_max": 1.04,
+    "pin_stiffness": 1.1,
+    "collision": {
+      "use_collision": true,
+      "use_self_collision": true,
+      "distance_min": 0.0012,
+      "friction": 0.5,
+      "damping": 0.22,
+      "thickness_outer": 0.0012,
+      "thickness_inner": 0.0012,
+      "self_friction": 0.5,
+      "self_distance_min": 0.0012,
+      "self_impulse_clamp": 0.06
+    },
+    "internal_springs": {
+      "internal_spring_max_diversion": 0.55,
+      "internal_spring_max_length": 0.085,
+      "internal_spring_normal_check": true,
+      "internal_tension_stiffness": 50,
+      "internal_compression_stiffness": 40
+    }
+  }
+}
