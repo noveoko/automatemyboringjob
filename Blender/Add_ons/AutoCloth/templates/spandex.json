@@ -1,0 +1,42 @@
+{
+  "spandex": {
+    "quality": 10,
+    "mass": 0.3,
+    "air_damping": 0.02,
+    "bending_model": "LINEAR",
+    "bend_stiffness": 0.5,
+    "bending_stiffness": 0.5,
+    "compression_damping": 0.04,
+    "compression_stiffness": 70,
+    "density_target": 1.2,
+    "density_strength": 1.5,
+    "shear_damping": 0.04,
+    "shear_stiffness": 40,
+    "tension_damping": 0.04,
+    "tension_stiffness": 100,
+    "use_pressure": true,
+    "use_dynamic_mesh": true,
+    "shrink_min": 0.6,
+    "shrink_max": 1.4,
+    "pin_stiffness": 1.2,
+    "collision": {
+      "use_collision": true,
+      "use_self_collision": true,
+      "distance_min": 0.001,
+      "friction": 0.6,
+      "damping": 0.2,
+      "thickness_outer": 0.001,
+      "thickness_inner": 0.001,
+      "self_friction": 0.6,
+      "self_distance_min": 0.001,
+      "self_impulse_clamp": 0.08
+    },
+    "internal_springs": {
+      "internal_spring_max_diversion": 0.8,
+      "internal_spring_max_length": 0.15,
+      "internal_spring_normal_check": true,
+      "internal_tension_stiffness": 90,
+      "internal_compression_stiffness": 70
+    }
+  }
+}
