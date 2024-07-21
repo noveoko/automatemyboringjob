@@ -1,0 +1,42 @@
+{
+  "crepe": {
+    "quality": 12,
+    "mass": 0.4,
+    "air_damping": 0.03,
+    "bending_model": "LINEAR",
+    "bend_stiffness": 0.7,
+    "bending_stiffness": 0.7,
+    "compression_damping": 0.04,
+    "compression_stiffness": 50,
+    "density_target": 1.1,
+    "density_strength": 0.9,
+    "shear_damping": 0.04,
+    "shear_stiffness": 35,
+    "tension_damping": 0.04,
+    "tension_stiffness": 55,
+    "use_pressure": false,
+    "use_dynamic_mesh": true,
+    "shrink_min": 0.95,
+    "shrink_max": 1.05,
+    "pin_stiffness": 1.1,
+    "collision": {
+      "use_collision": true,
+      "use_self_collision": true,
+      "distance_min": 0.0015,
+      "friction": 0.6,
+      "damping": 0.25,
+      "thickness_outer": 0.0015,
+      "thickness_inner": 0.0015,
+      "self_friction": 0.6,
+      "self_distance_min": 0.0015,
+      "self_impulse_clamp": 0.07
+    },
+    "internal_springs": {
+      "internal_spring_max_diversion": 0.6,
+      "internal_spring_max_length": 0.09,
+      "internal_spring_normal_check": true,
+      "internal_tension_stiffness": 45,
+      "internal_compression_stiffness": 40
+    }
+  }
+}
