@@ -1,0 +1,42 @@
+{
+  "microfiber_cloth": {
+    "quality": 14,
+    "mass": 0.25,
+    "air_damping": 0.02,
+    "bending_model": "LINEAR",
+    "bend_stiffness": 0.4,
+    "bending_stiffness": 0.4,
+    "compression_damping": 0.03,
+    "compression_stiffness": 35,
+    "density_target": 0.9,
+    "density_strength": 0.7,
+    "shear_damping": 0.03,
+    "shear_stiffness": 30,
+    "tension_damping": 0.03,
+    "tension_stiffness": 45,
+    "use_pressure": false,
+    "use_dynamic_mesh": true,
+    "shrink_min": 0.96,
+    "shrink_max": 1.04,
+    "pin_stiffness": 0.9,
+    "collision": {
+      "use_collision": true,
+      "use_self_collision": true,
+      "distance_min": 0.0008,
+      "friction": 0.8,
+      "damping": 0.15,
+      "thickness_outer": 0.0008,
+      "thickness_inner": 0.0008,
+      "self_friction": 0.8,
+      "self_distance_min": 0.0008,
+      "self_impulse_clamp": 0.06
+    },
+    "internal_springs": {
+      "internal_spring_max_diversion": 0.5,
+      "internal_spring_max_length": 0.07,
+      "internal_spring_normal_check": true,
+      "internal_tension_stiffness": 40,
+      "internal_compression_stiffness": 35
+    }
+  }
+}
