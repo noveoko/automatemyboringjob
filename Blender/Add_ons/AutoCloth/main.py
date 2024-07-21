@@ -21,37 +21,39 @@ class ApplyPhysicsFromJSON(Operator, ImportHelper):
     filter_glob: StringProperty(default="*.json", options={'HIDDEN'})
 
     def execute(self, context):
-        try:
-            with open(self.filepath, 'r') as file:
-                data = json.load(file)
-        except Exception as e:
-            self.report({'ERROR'}, f"Failed to load JSON file: {e}")
-            return {'CANCELLED'}
+    try:
+        with open(self.filepath, 'r') as file:
+            data = json.load(file)
+    except Exception as e:
+        self.report({'ERROR'}, f"Failed to load JSON file: {e}")
+        return {'CANCELLED'}
 
-        obj = context.active_object
-        if not obj or obj.type != 'MESH':
-            self.report({'ERROR'}, "No active mesh object selected.")
-            return {'CANCELLED'}
+    obj = context.active_object
+    if not obj or obj.type != 'MESH':
+        self.report({'ERROR'}, "No active mesh object selected.")
+        return {'CANCELLED'}
 
-        if "cloth" in data:
-            cloth_modifier = next((mod for mod in obj.modifiers if mod.type == 'CLOTH'), None)
-            if not cloth_modifier:
-                bpy.ops.object.modifier_add(type='CLOTH')
-                cloth_modifier = obj.modifiers[-1]
+    # Look for the first key in the JSON data
+    cloth_key = next(iter(data))
+    if cloth_key:
+        cloth_data = data[cloth_key]
+        cloth_modifier = next((mod for mod in obj.modifiers if mod.type == 'CLOTH'), None)
+        if not cloth_modifier:
+            bpy.ops.object.modifier_add(type='CLOTH')
+            cloth_modifier = obj.modifiers[-1]
 
-            cloth_data = data["cloth"]
-            self.apply_cloth_settings(cloth_modifier.settings, cloth_data)
-            self.apply_collision_settings(cloth_modifier.collision_settings, cloth_data.get("collision", {}))
-            self.apply_internal_springs_settings(cloth_modifier.internal_springs_settings, cloth_data.get("internal_springs", {}))
+        self.apply_cloth_settings(cloth_modifier.settings, cloth_data)
+        self.apply_collision_settings(cloth_modifier.collision_settings, cloth_data.get("collision", {}))
+        self.apply_internal_springs_settings(cloth_modifier.internal_springs_settings, cloth_data.get("internal_springs", {}))
 
-            preset_name = os.path.splitext(os.path.basename(self.filepath))[0]
-            self.create_cloth_preset(preset_name, cloth_modifier)
+        preset_name = os.path.splitext(os.path.basename(self.filepath))[0]
+        self.create_cloth_preset(preset_name, cloth_modifier)
 
-            self.report({'INFO'}, f"Physics applied successfully and preset '{preset_name}' created.")
-        else:
-            self.report({'WARNING'}, "No cloth data found in JSON file.")
+        self.report({'INFO'}, f"Physics applied successfully and preset '{preset_name}' created.")
+    else:
+        self.report({'WARNING'}, "No cloth data found in JSON file.")
 
-        return {'FINISHED'}
+    return {'FINISHED'}
 
     def apply_cloth_settings(self, settings, data):
         properties = [
