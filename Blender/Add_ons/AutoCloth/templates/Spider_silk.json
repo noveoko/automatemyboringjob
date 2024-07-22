@@ -1,0 +1,42 @@
+{
+  "spider_silk": {
+    "quality": 15,
+    "mass": 0.15,
+    "air_damping": 0.01,
+    "bending_model": "LINEAR",
+    "bend_stiffness": 0.7,
+    "bending_stiffness": 0.7,
+    "compression_damping": 0.02,
+    "compression_stiffness": 70,
+    "density_target": 0.7,
+    "density_strength": 0.9,
+    "shear_damping": 0.02,
+    "shear_stiffness": 60,
+    "tension_damping": 0.02,
+    "tension_stiffness": 120,
+    "use_pressure": false,
+    "use_dynamic_mesh": true,
+    "shrink_min": 0.99,
+    "shrink_max": 1.01,
+    "pin_stiffness": 1.5,
+    "collision": {
+      "use_collision": true,
+      "use_self_collision": true,
+      "distance_min": 0.0005,
+      "friction": 0.3,
+      "damping": 0.1,
+      "thickness_outer": 0.0005,
+      "thickness_inner": 0.0005,
+      "self_friction": 0.3,
+      "self_distance_min": 0.0005,
+      "self_impulse_clamp": 0.05
+    },
+    "internal_springs": {
+      "internal_spring_max_diversion": 0.3,
+      "internal_spring_max_length": 0.05,
+      "internal_spring_normal_check": true,
+      "internal_tension_stiffness": 110,
+      "internal_compression_stiffness": 65
+    }
+  }
+}
