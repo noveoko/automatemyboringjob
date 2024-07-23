@@ -22,7 +22,7 @@ def encrypt(key, plaintext):
     return iv + ciphertext
 
 # Example usage
-key = os.urandom(32)  # AES-256 key
-plaintext = "This is a secret message."
-encrypted_message = encrypt(key, plaintext)
-print(encrypted_message)
+# key = os.urandom(32)  # AES-256 key
+# plaintext = "This is a secret message."
+# encrypted_message = encrypt(key, plaintext)
+# print(encrypted_message)
