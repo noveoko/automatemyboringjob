@@ -36,4 +36,9 @@ function download_links(){
     downloadArrayAsTextFile(results);
 }
 
-download_links()
+function click_next(){
+    let button = document.querySelector("span[style='display:block;margin-left:53px']");
+    button.click();
+}
+download_links
+click_next()
