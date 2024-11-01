@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 from collections import deque
+from google.colab.patches import cv2_imshow  # Import this for visualization
 
 class MotionAmplifier:
     def __init__(self, alpha=16, beta=1, buffer_size=5):
@@ -56,6 +57,7 @@ class MotionAmplifier:
         fourcc = cv2.VideoWriter_fourcc(*'mp4v')
         out = cv2.VideoWriter(output_video_path, fourcc, fps, (width, height))
 
+        frame_count = 0
         while cap.isOpened():
             ret, frame = cap.read()
             if not ret:
@@ -64,18 +66,18 @@ class MotionAmplifier:
             amplified_frame = self.process_frame(frame)
             out.write(amplified_frame)
 
-            # Display the frame for debugging (optional)
-            cv2.imshow('Amplified Motion', amplified_frame)
-            if cv2.waitKey(10) & 0xFF == ord('q'):
-                break
+            # Display the frame for debugging (shows every 20th frame to limit output)
+            if frame_count % 20 == 0:
+                cv2_imshow(amplified_frame)
+            
+            frame_count += 1
 
         cap.release()
         out.release()
-        cv2.destroyAllWindows()
 
 def main():
-    input_path = 'rain_a.mp4'  # example input video
-    output_path = 'rain_b_amplified.mp4'  # example output video
+    input_path = '/content/aerial_photos_movie0014-0045.mp4'  # example input video
+    output_path = '/content/kowel_aerial.mp4'  # example output video
 
     amplifier = MotionAmplifier(alpha=32, beta=1, buffer_size=5)
     amplifier.process_video(input_path, output_path)
