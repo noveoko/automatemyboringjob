@@ -1,0 +1,22 @@
+# Use a base image
+FROM ubuntu:20.04
+
+# Create certificate directories
+RUN mkdir -p /usr/local/share/ca-certificates /etc/ssl/certs
+
+# Copy certificates from build context
+COPY ./certs/*.crt /usr/local/share/ca-certificates/
+
+# Update CA certificates
+RUN apt-get update && \
+    apt-get install -y ca-certificates && \
+    update-ca-certificates && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# Set environment variable for certificate verification
+ENV SSL_CERT_DIR=/etc/ssl/certs
+ENV SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
+
+# Your application commands here
+CMD ["bash"]
