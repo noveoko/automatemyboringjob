@@ -3,7 +3,7 @@ import { FilterRule, FilterSettings } from '../types/FilterTypes';
 class ContentFilter {
     private settings: FilterSettings | null = null;
     private observer: MutationObserver | null = null;
-    private processTimer: NodeJS.Timeout | null = null;
+    private processTimer: number | null = null;
 
     constructor() {
         this.initialize();
@@ -37,11 +37,12 @@ class ContentFilter {
     private setupObserver(): void {
         this.observer = new MutationObserver((mutations) => {
             if (this.processTimer) {
-                clearTimeout(this.processTimer);
+                window.clearTimeout(this.processTimer);
             }
 
-            this.processTimer = setTimeout(() => {
-                this.processNodes(mutations.flatMap(m => [...m.addedNodes]));
+            this.processTimer = window.setTimeout(() => {
+                const addedNodes = mutations.flatMap(m => Array.from(m.addedNodes));
+                this.processNodes(addedNodes);
             }, 100);
         });
 
@@ -117,7 +118,6 @@ class ContentFilter {
                 return element.matches(rule.value);
 
             case 'rating':
-                // Implementation depends on specific site (YouTube, Netflix, etc.)
                 return this.matchesRating(element, rule.value);
 
             default:
@@ -126,7 +126,6 @@ class ContentFilter {
     }
 
     private matchesRating(element: Element, rating: string): boolean {
-        // Example implementation for YouTube
         if (window.location.hostname.includes('youtube.com')) {
             const ratingIndicator = element.querySelector('[aria-label*="rating"]');
             if (ratingIndicator) {
@@ -144,7 +143,6 @@ class ContentFilter {
         element.setAttribute('data-original-display', getComputedStyle(element).display);
         (element as HTMLElement).style.display = 'none';
 
-        // Add indicator
         const indicator = document.createElement('div');
         indicator.className = 'filter-indicator';
         indicator.textContent = 'Content filtered';
@@ -169,24 +167,3 @@ class ContentFilter {
 
 // Initialize the content filter
 new ContentFilter();
-
-// Add styles for the filter indicator
-const style = document.createElement('style');
-style.textContent = `
-        .filter-indicator {
-          padding: 8px 16px;
-          background-color: #e5e7eb;
-          border-radius: 4px;
-          margin: 8px 0;
-          font-size: 14px;
-          color: #4b5563;
-          cursor: pointer;
-          transition: background-color 0.2s;
-          user-select: none;
-        }
-      
-        .filter-indicator:hover {
-          background-color: #d1d5db;
-        }
-      `;
-document.head.appendChild(style)

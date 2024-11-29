@@ -38,6 +38,7 @@ module.exports = {
                 { from: 'public/popup.html' },
                 { from: 'assets/img/ducttube.webp', to: 'icon.png' },
                 { from: 'assets/img/favicon.ico', to: 'favicon.ico' },
+                { from: 'src/content/contentScript.css' },
                 {
                     from: 'node_modules/webextension-polyfill/dist/browser-polyfill.min.js',
                 },

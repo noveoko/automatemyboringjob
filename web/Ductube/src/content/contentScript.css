@@ -1,0 +1,19 @@
+.filter-indicator {
+    padding: 8px 16px;
+    background-color: #e5e7eb;
+    border-radius: 4px;
+    margin: 8px 0;
+    font-size: 14px;
+    color: #4b5563;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    user-select: none;
+}
+
+.filter-indicator:hover {
+    background-color: #d1d5db;
+}
+
+[data-filter-hidden="true"] {
+    display: none !important;
+}
