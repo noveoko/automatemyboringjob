@@ -1,59 +1,38 @@
-# automatemyboringjob
+# Repository Structure
 
-![header](images/header.png)
+This repository contains various automation tools and utilities organized as follows:
 
-Programs to automate YOUR boring job
+## /automation
+- Confluence automation scripts
+- Google workspace automation
+- Desktop automation tools
+- Container and deployment automation
 
-# Example 1 Web Scraping in a Hurry
+## /tools
+- Regex generation utilities
+- Code search tools
+- Duplicate file removal tools
+- IDE configurations
 
-## Purpose
-Grab all the headings on a website without installing any plugins
+## /web
+- Web applications and scripts
+- Social media automation tools
 
-- Press CTRL+Shift+i
-- In the _Developer's Tool Bar/Window_ click on **Console** to open the JavaScript console
-- Copy the following script (between the `script content` tags):
+## /media
+- Image processing utilities
+- Audio/video conversion tools
+- 3D modeling and animation
 
-```
-var getHeadings = function(){
-    data = document.querySelectorAll("h1,h2,h3,h4");
-    for(i=0;i<data.length;i++){
-        console.log(data[i].innerText);
-}
+## /learning
+- Documentation and guides
+- Career resources
+- Learning materials
 
-};
-getHeadings();
-```
+## /security
+- Security-related tools
+- Encryption utilities
 
-- Paste this script into your console, and hit `ENTER`
-- Now just simply copy paste the headlines that have been printed in the console window
-
-## Example result (from CNN.com):
-
-```
-White House preparing draft national emergency order
-Trump administration has identified $7B in funds to build a border wall
-ANALYSIS No one knows how Trump plans to end the shutdown
-ANALYSIS A big lesson for Trump in Senate shutdown votes
-Pelosi schools Trump in the art of power
-Senator slams Ted Cruz's 'crocodile tears
-...
-```
-# Example 2: Remove Duplicate Files
-
-from the remove_duplicate_files directory run:
-`python delete_duplicates.py`
-You will be prompted for a root path and then once you hit enter the following steps will take place:
-
-1. All files will be found and opened and assigned a hash number using Python's built in `hash` module.
-2. Next all superfluous files with more than one hash will be deleted.
-3. At the end you will be promted to clean up the files created or leave them as they are.
- 
-# Example 3: Convert a Directory of PDF files into Audio books
-
-Run
-`python ebook_to_audiobook.py <path_to_your_PDF_directory>`
-
-# Example 4: Find similar images using a naive hand-crafted image hashing approach
-
-Run
-`python simple_image_hash.py` <path_to_image_files>`
+## /utils
+- Miscellaneous utilities
+- Domain management
+- Application ideas and prototypes
