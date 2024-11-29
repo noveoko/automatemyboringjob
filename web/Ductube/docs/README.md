@@ -1,6 +1,6 @@
 ## Ductube
 
-![alt text](static/img/duct_tape_icon.png "Duct tape Icon")
+![alt text](static/img/ducttube.webp "Duct tape Icon")
 
 Filter Youtube, Reddit recommendations using rudimentary rules defined as keywords
 

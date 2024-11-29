@@ -12,7 +12,7 @@ $toRemove = @(
     "reorganize.ps1",      # likely a one-time script
     
     # Duplicate assets
-    "assets\img\duct_tape_icon.png",  # using icon.png instead
+    "assets\img\ducttube.webp",  # using icon.png instead
     "src\GoogleSearch\icon.png"       # duplicate icon
 )
 

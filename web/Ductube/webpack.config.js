@@ -34,7 +34,10 @@ module.exports = {
     plugins: [
         new CopyPlugin({
             patterns: [
-                { from: 'public' },
+                { from: 'src/manifest.json' },
+                { from: 'public/popup.html' },
+                { from: 'assets/img/ducttube.webp', to: 'icon.png' },
+                { from: 'assets/img/favicon.ico', to: 'favicon.ico' },
                 {
                     from: 'node_modules/webextension-polyfill/dist/browser-polyfill.min.js',
                 },
